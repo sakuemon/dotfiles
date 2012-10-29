@@ -1,0 +1,3 @@
+syntax: regexp
+^vim/bundle/
+^vim/backup/
