@@ -7,6 +7,7 @@ setopt share_history
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+fpath=($fpath ~/.zsh/functions/)
 zstyle :compinstall filename '/home/miya/.zshrc'
 
 autoload -Uz compinit
@@ -44,7 +45,7 @@ alias be="bundle exec"
 if [ -s "$HOME/.rbenv/" ] ; then ;
 	export PATH="$HOME/.rbenv/bin:$PATH"
 	eval "$(rbenv init -)"
-	source $HOME/.rbenv/completions/rbenv.zsh
+#	source $HOME/.rbenv/completions/rbenv.zsh
 fi
 
 
