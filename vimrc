@@ -1,36 +1,39 @@
 set nocompatible
-" VUNDLE {{{
+" NEOVUNDLE {{{
 filetype off
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
-filetype plugin on
 
-Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neocomplecache-snippets-complete'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/unite.vim'
-Bundle 'ujihisa/unite-rake'
-Bundle 'basyura/unite-rails'
-Bundle 'tsukkee/unite-tag'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
+if has('vim_starting')
+	set runtimepath+=~/.vim/bundle/neobundle.vim/
+	call neobundle#rc(expand('~/.vim/bundle/'))
+endif
 
-Bundle 'thinca/vim-ref'
+NeoBundle 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-rake'
+NeoBundle 'basyura/unite-rails'
+NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-rails'
+
+NeoBundle 'thinca/vim-ref'
 
 " ide
-Bundle 'scrooloose/nerdtree'
-Bundle 'Source-Explorer-srcexpl.vim'
-Bundle 'taglist.vim'
-"Bundle 'trinity.vim'
-Bundle 'vim-scripts/Trinity'
-Bundle 'errormarker.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-scripts/SrcExpl'
+NeoBundle 'taglist.vim'
+NeoBundle 'vim-scripts/Trinity'
+NeoBundle 'errormarker.vim'
 
 " lang
-Bundle 'mattn/zencoding-vim'
-Bundle 'javacomplete'
-Bundle 'vim-coffee-script'
+NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'javacomplete'
+NeoBundle 'vim-coffee-script'
 
 " }}}
+
+filetype plugin on
 
 " BASIC {{{
 " message format
