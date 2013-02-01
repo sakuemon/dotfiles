@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTSIZE=500000
+SAVEHIST=500000
 setopt hist_ignore_dups
 setopt share_history
 bindkey -v
@@ -31,6 +31,7 @@ SPROMPT="%r is correct? [n,y,a,e]: "
 
 # alias
 alias rm="rm -i"
+alias be="bundle exec"
 case "${OSTYPE}" in
 darwin*)
 	alias ls="ls -G"
@@ -58,3 +59,11 @@ fi
 
 # for node(nvm)
 [[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
+
+# for phpenv
+if [ -s "$HOME/.phpenv/bin/phpenv" ] ; then ;
+	export PATH=$PATH:$HOME/.phpenv/bin
+	eval "$(phpenv init -)"
+fi
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
