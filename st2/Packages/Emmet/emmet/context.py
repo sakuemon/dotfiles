@@ -37,6 +37,17 @@ def make_path(filename):
 def js_log(message):
 	print(message)
 
+def js_file_reader(file_path, use_unicode=True):
+	if use_unicode:
+		f = codecs.open(file_path, 'r', 'utf-8')
+	else:
+		f = open(file_path, 'r')
+
+	content = f.read()
+	f.close()
+
+	return content
+
 def import_pyv8():
 	# Importing non-existing modules is a bit tricky in Python:
 	# if we simply call `import PyV8` and module doesn't exists,
@@ -44,9 +55,11 @@ def import_pyv8():
 	# throw exception even if this module appear in PYTHONPATH.
 	# To prevent this, we have to manually test if 
 	# PyV8.py(c) exists in PYTHONPATH before importing PyV8
-	if 'PyV8' in sys.modules and 'PyV8' not in globals():
+	if 'PyV8' in sys.modules:
 		# PyV8 was loaded by ST2, create global alias
-		globals()['PyV8'] = __import__('PyV8')
+		if 'PyV8' not in globals():
+			globals()['PyV8'] = __import__('PyV8')
+			
 		return
 
 	loaded = False
@@ -81,8 +94,9 @@ class Context():
 	@param contrib: Python objects to contribute to JS execution context
 	@param pyv8_path: Location of PyV8 binaries
 	"""
-	def __init__(self, files=[], ext_path=None, contrib=None, logger=None):
+	def __init__(self, files=[], ext_path=None, contrib=None, logger=None, reader=js_file_reader):
 		self.logger = logger
+		self.reader = reader
 
 		try:
 			import_pyv8()
@@ -132,7 +146,8 @@ class Context():
 			self.log('Loading Emmet extensions from %s' % self._ext_path)
 			for dirname, dirnames, filenames in os.walk(self._ext_path):
 				for filename in filenames:
-					ext_files.append(os.path.join(dirname, filename))
+					if filename[0] != '.':
+						ext_files.append(os.path.join(dirname, filename))
 
 			self.js().locals.pyLoadExtensions(ext_files)
 
@@ -150,13 +165,16 @@ class Context():
 
 			if self._use_unicode is None:
 				self._use_unicode = should_use_unicode()
-
+			
 			glue = u'\n' if self._use_unicode else '\n'
 			core_src = [self.read_js_file(make_path(f)) for f in self._core_files]
-			
+
 			self._ctx = PyV8.JSContext()
 			self._ctx.enter()
 			self._ctx.eval(glue.join(core_src))
+
+			# for f in self._core_files:
+			# 	self._ctx.eval(self.read_js_file(make_path(f)), name=f, line=0, col=0)
 
 			# load default snippets
 			self._ctx.locals.pyLoadSystemSnippets(self.read_js_file(make_path('snippets.json')))
@@ -168,6 +186,8 @@ class Context():
 			if self._contrib:
 				for k in self._contrib:
 					self._ctx.locals[k] = self._contrib[k]
+		else:
+			self._ctx.enter()
 
 		if self._should_load_extension:
 			self._ctx.locals.pyResetUserData()
@@ -190,21 +210,16 @@ class Context():
 		if self._ctx:
 			self._ctx.leave()
 			self._ctx = None
-			PyV8.JSEngine.collect()
-			gc.collect()
+			try:
+				PyV8.JSEngine.collect()
+				gc.collect()
+			except:
+				pass
 
 		self._should_load_extension = True
 
 	def read_js_file(self, file_path):
-		if self._use_unicode:
-			f = codecs.open(file_path, 'r', 'utf-8')
-		else:
-			f = open(file_path, 'r')
-
-		content = f.read()
-		f.close()
-
-		return content
+		return self.reader(file_path, self._use_unicode)
 
 	def eval(self, source):
 		self.js().eval(source)

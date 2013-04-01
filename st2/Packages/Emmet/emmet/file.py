@@ -19,40 +19,64 @@ except Exception as e:
 def is_url(path):
 	return re.match(r'^https?://', path, re.IGNORECASE)
 
-def read_http(url, size):
+def read_http(url, size=-1, mode=None):
 	response = urllib2.urlopen(url, timeout=5)
 	return response.read(size)
 
-def read_file(path, size):
-	with open(path, 'rb') as fp:
-		return fp.read(size)
+def read_file(path, size=-1, mode='rb'):
+	kwargs = {}
+	if is_python3 and 'b' not in mode:
+		kwargs['encoding'] = 'utf-8'
 
+	with open(path, mode, **kwargs) as fp:
+		return fp.read(size)
 
 class File():
 	def __init__(self):
 		pass
 
-	def read(self, path, size=-1, callback=None):
+	def _read(self, path, size, mode='rb'):
+		reader = is_url(path) and read_http or read_file
+		return reader(path, size, mode) 
+
+	def read(self, path, size, callback=None):
 		"""
 		Read file content and return it
 		@param path: File's relative or absolute path
 		@type path: str
 		@return: str
 		"""
-		reader = is_url(path) and read_http or read_file
 
 		try:
-			content = reader(path, -1)
+			content = self._read(path, size)
+
+			# return as array of character codes since PyV8 may corrupt
+			# binary data when python string is translated into JS string
+			if is_python3:
+				content = [ch for ch in content]
+			else:
+				content = [ord(ch) for ch in content]
+
 		except Exception as e:
-			return callback(repr(e), None)
+			return callback(str(e), None)
 
-		# return as array of character codes since PyV8 may corrupt
-		# binary data when python string is translated into JS string
-		if is_python3:
-			content = [ch for ch in content]
-		else:
-			content = [ord(ch) for ch in content]
+		callback(None, content)
 
+	def read_text(self, path, size, callback=None):
+		"""
+		Read file content and return it
+		@param path: File's relative or absolute path
+		@type path: str
+		@return: str
+		"""
+
+		try:
+			content = self._read(path, size, 'r')
+			if not is_python3:
+				content = content.decode('utf-8')
+		except Exception as e:
+			return callback(str(e), None)
+		
 		callback(None, content)
 
 	def locate_file(self, editor_file, file_name):

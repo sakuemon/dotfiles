@@ -3,10 +3,12 @@
 	{
 		"PATH": "/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 	},
-	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
 	"font_size": 11.0,
+	"font_face": "Ricty Regular",
 	"ignored_packages":
 	[
+		"DocBlockr",
 		"CTags"
 	],
 	"trailing_spaces_highlight_color": "invalid",

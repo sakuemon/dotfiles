@@ -7,8 +7,9 @@ setopt share_history
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+typeset -U path cdpath fpath manpath
 fpath=($fpath ~/.zsh/functions/)
-zstyle :compinstall filename '/home/miya/.zshrc'
+zstyle :compinstall filename ~/.zshrc
 
 autoload -Uz compinit
 compinit
@@ -23,11 +24,14 @@ setopt auto_pushd
 setopt list_packed
 
 export LANG=ja_JP.UTF-8
-PROMPT="[%/]
+PROMPT="[%F{magenta}%/%f]
 %% "
 #RPROMPT="[%/]"
 PROMPT2="%_%% "
 SPROMPT="%r is correct? [n,y,a,e]: "
+
+#PATH
+export PATH=$PATH:$HOME/bin
 
 # alias
 alias rm="rm -i"

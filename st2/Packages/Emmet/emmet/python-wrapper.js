@@ -32,24 +32,49 @@ function pyResetUserData() {
 
 emmet.define('file', function(require, _) {
 	return {
-		read: function(path, size, callback) {
-			var args = _.rest(arguments);
-			callback = _.last(args);
+		_parseParams: function(args) {
+			var params = {
+				path: args[0],
+				size: -1
+			};
+
+			args = _.rest(args);
+			params.callback = _.last(args);
 			args = _.initial(args);
-			if (!args.length) {
-				size = -1;
+			if (args.length) {
+				params.size = args[0];
 			}
 
-			pyFile.read(path, size, function(err, content) {
-				if (err) {
-					return callback(err, content);
-				}
+			return params;
+		},
 
-				content = _.map(content || [], function(b) {
-					return String.fromCharCode(b);
-				}).join('');
-				callback(null, content);
-			});
+		read: function(path, size, callback) {
+			var params = this._parseParams(arguments);
+
+			try {
+				pyFile.read(params.path, params.size, function(err, content) {
+					if (err) {
+						return params.callback(err, content);
+					}
+
+					content = _.map(content || [], function(b) {
+						return String.fromCharCode(b);
+					}).join('');
+					params.callback(null, content);
+				});
+			} catch(e) {
+				params.callback(e);
+			}
+		},
+
+		readText: function() {
+			var params = this._parseParams(arguments);
+			try {
+				pyFile.read_text(params.path, params.size, params.callback);	
+			} catch(e) {
+				params.callback(e);
+			}
+			
 		},
 
 		locateFile: function(editorFile, fileName) {
