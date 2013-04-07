@@ -12,7 +12,7 @@ fpath=($fpath ~/.zsh/functions/)
 zstyle :compinstall filename ~/.zshrc
 
 autoload -Uz compinit
-compinit
+compinit -u
 autoload -U colors
 colors
 # End of lines added by compinstall
