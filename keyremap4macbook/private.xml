@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+	<item>
+		<name>control+[ with ime-off</name>
+		<identifier>private.ctrl-L2ctrl-L+IME-OFF</identifier>
+		<appendix></appendix>
+		<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::CONTROL_L, KeyCode::BRACKET_LEFT, ModifierFlag::CONTROL_L, KeyCode::JIS_EISUU</autogen>
+	</item>
+</root>
