@@ -4,8 +4,8 @@
 		"PATH": "/usr/local/bin:/usr/local/sbin:/usr/local/share:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 	},
 	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
-	"font_size": 11.0,
 	"font_face": "Ricty Regular",
+	"font_size": 11.0,
 	"ignored_packages":
 	[
 		"DocBlockr",

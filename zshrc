@@ -8,7 +8,7 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 typeset -U path cdpath fpath manpath
-fpath=($fpath ~/.zsh/functions/)
+fpath=(~/.zsh/functions/ /usr/local/share/zsh-completions $fpath)
 zstyle :compinstall filename ~/.zshrc
 
 autoload -Uz compinit
@@ -36,6 +36,7 @@ export PATH=$PATH:$HOME/bin
 # alias
 alias rm="rm -i"
 alias be="bundle exec"
+alias diff="colordiff"
 case "${OSTYPE}" in
 darwin*)
 	alias ls="ls -G"
