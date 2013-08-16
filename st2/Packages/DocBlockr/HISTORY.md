@@ -1,5 +1,18 @@
 # DocBlockr Extended Changelog
 
+- **v2.11.6**, *14 Aug 2013*
+  - Predefined `@author` tags do not get parsed for column spacing
+  - Handles the case when an arguments list contains a comma, for example, within a default value
+  - A new keybinding for Windows to re-parse a doc block (<kbd>Alt+W</kbd>)
+  - Fixes a regression that some function names were not being parsed correctly
+- **v2.11.5**, *11 Aug 2013*
+  - Fix for last deploy which accidentally changed the default `var` tag to "property". Default is "type" once again.
+- **v2.11.4**, *10 Aug 2013*
+  - The tag used on `var` declarations can be customised (eg: to "property" for YUIDoc)
+  - Small fix for function declarations in C/C++ (thanks to [Simon Aittamaa](https://github.com/simait))
+- **v2.11.3**, *18 June 2013*
+  - Adds support for Groovy (thanks to [Tiago Santos](https://github.com/tmcsantos))
+  - README has gifs. So many gifs.
 - **v2.11.2**, *12 June 2013*
   - Compatibility fixes for ST3, thanks to Marc Neuhaus (@mneuhaus) and Daniel Julius Lasiman (@danieljl).
 - **v2.11.1**, *11 May 2013*

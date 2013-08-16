@@ -1,4 +1,4 @@
-DocBlockr is a package for [Sublime Text 2 & 3][sublime] which makes writing documentation a breeze. DocBlockr supports **Javascript**, **PHP**, **ActionScript**, **CoffeeScript**, **Java**, **Objective C**, **C** and **C++**.
+DocBlockr is a package for [Sublime Text 2 & 3][sublime] which makes writing documentation a breeze. DocBlockr supports **Javascript**, **PHP**, **ActionScript**, **CoffeeScript**, **Java**, **Groovy**, **Objective C**, **C** and **C++**.
 
 ## Installation ##
 
@@ -12,164 +12,76 @@ You can leave either of these things [here][issues]. Pull requests are welcomed 
 
 ## Changelog ##
 
+- **v2.11.6**, *14 Aug 2013*
+  - Predefined `@author` tags do not get parsed for column spacing
+  - Handles the case when an arguments list contains a comma, for example, within a default value
+  - A new keybinding for Windows to re-parse a doc block (<kbd>Alt+W</kbd>)
+  - Fixes a regression that some function names were not being parsed correctly
+- **v2.11.5**, *11 Aug 2013*
+  - Fix for last deploy which accidentally changed the default `var` tag to "property". Default is "type" once again.
+- **v2.11.4**, *10 Aug 2013*
+  - The tag used on `var` declarations can be customised (eg: to "property" for YUIDoc)
+  - Small fix for function declarations in C/C++ (thanks to [Simon Aittamaa](https://github.com/simait))
+- **v2.11.3**, *18 June 2013*
+  - Adds support for Groovy (thanks to [Tiago Santos](https://github.com/tmcsantos))
+  - README has gifs. So many gifs.
 - **v2.11.2**, *12 June 2013*
   - Compatibility fixes for ST3, thanks to Marc Neuhaus (@mneuhaus) and Daniel Julius Lasiman (@danieljl).
-- **v2.11.1**, *11 May 2013*
-  - No changes, just removes some debugging code that wasn't cleaned up in the last release (oops).
-- **v2.11.0**, *11 May 2013*
-  - It isn't broken in ST3 any more. (yay)
-  - New options:
-    - `jsdocs_simple_mode` for when you don't want dynamic templates
-    - `jsdocs_lower_case_primitives` for YUIDoc which requires lower case for primitive data types
-    - `jsdocs_extra_tags_go_after` to put custom text at the end of the docblock
-  - Better handling of IIFEs
-  - Hotkey for reparsing a block changed to <kbd>alt+shift+tab</kbd> to avoid OS-level conflicts
-  - Adding a new line at the start of the docblock is handled properly
-  - C/C++: arguments containing square brackets are handled properly
-- **v2.10.1**, *19 April 2013*
-  - Adds variable substitution in `jsdocs_extra_tags`
-  - Fixes indentation bug in `jsdocs_extra_tags`
-  - Fixes bug when adding a new line after a docblock which contains text afterwards
-  - Fixes link to Pledgie (thanks @Krinkle)
 
 Older history can be found in [the history file](https://github.com/spadgos/sublime-jsdocs/blob/master/HISTORY.md).
 
 ## Usage ##
 
-> Below are some examples of what the package does. The pipe (`|`) indicates where the cursor will be after the action has run. Note that there are no keyboard shortcuts required to trigger these completions - just type as normal and it happens for you!
+> Below are some examples of what the package does. Note that there are no keyboard shortcuts required to trigger these completions - just type as normal and it happens for you!
 
 ### Docblock completion ###
 
 Pressing **enter** or **tab** after `/**` (or `###*` for Coffee-Script) will yield a new line and will close the comment.
 
-    /**<<enter>>
-
-    -- becomes --
-
-    /**
-     * |
-     */
+![](http://spadgos.github.io/sublime-jsdocs/images/basic.gif)
 
 Single-asterisk comment blocks behave similarly:
 
-    /*<<enter>
-
-    -- becomes --
-
-    /*
-    |
-     */
-
-If you press asterisk on the first line, it becomes indented with the line above:
-
-    /*
-    |<<*>>
-     */
-
-    /*
-     *|
-     */
+![](http://spadgos.github.io/sublime-jsdocs/images/basic-block.gif)
 
 ### Function documentation ###
 
 However, if the line directly afterwards contains a function definition, then its name and parameters are parsed and some documentation is automatically added.
 
-    /**<<enter>>
-    function foobar (baz, quux) { }
-
-    -- becomes --
-
-    /**
-     * [foobar description]
-     * @param  {[type]} baz [description]
-     * @param  {[type]} quux [description]
-     * @return {[type]}
-     */
-    function foobar (baz, quux) { }
+![](http://spadgos.github.io/sublime-jsdocs/images/function-template.gif)
 
 You can then press `tab` to move between the different fields.
 
 If you have many arguments, or long variable names, it might be useful to spread your arguments across multiple lines. DocBlockr will handle this situation too:
 
-    /**<<enter>>
-    function someLongFunctionName(
-            withArguments, across,
-            many, lines
-        ) {
+![](http://spadgos.github.io/sublime-jsdocs/images/long-args.gif)
 
-    -- becomes --
+In languages which support [type hinting][typehinting] or default values, then those types are prefilled as the datatypes.
 
-    /**
-     * [someLongFunctionName description]
-     * @param  {[type]} withArguments [description]
-     * @param  {[type]} across        [description]
-     * @param  {[type]} many          [description]
-     * @param  {[type]} lines         [description]
-     * @return {[type]}               [description]
-     */
-    function someLongFunctionName(
-            withArguments, across,
-            many, lines
-        ) {
-
-
-In PHP, if [type hinting][typehinting] or default values are used, then those types are prefilled as the datatypes.
-
-    /**|<<enter>>
-    function foo(Array $arr, MyClass $cls, $str = "abc", $i = 0, $b = false) {}
-
-    /**
-     * [foo description]
-     * @param  Array $arr [description]
-     * @param  MyClass $cls [description]
-     * @param  string $str [description]
-     * @param  int $i [description]
-     * @param  bool $b [description]
-     * @return [type]
-     */
-    function foo(Array $arr, MyClass $cls, $str = "abc", $i = 0) {}
+![](http://spadgos.github.io/sublime-jsdocs/images/type-hinting.gif)
 
 DocBlockr will try to make an intelligent guess about the return value of the function.
 
 - If the function name is or begins with "set" or "add", then no `@return` is inserted.
 - If the function name is or begins with "is" or "has", then it is assumed to return a `Boolean`.
 - In Javascript, if the function begins with an uppercase letter then it is assumed that the function is a class definition. No `@return` tag is added.
-- In Javascript, functions beginning with an underscore are assumed to be private: `@private` is added to these.
 - In PHP, some of the [magic methods][magicmethods] have their values prefilled:
   - `__construct`, `__destruct`, `__set`, `__unset`, `__wakeup` have no `@return` tag.
   - `__sleep` returns an `Array`.
   - `__toString` returns a `string`.
   - `__isset` returns a `bool`.
 
-In Javascript, functions beginning with an underscore are given a `@private` tag by default.
-
 ### Variable documentation ###
 
 If the line following your docblock contains a variable declaration, DocBlockr will try to determine the data type of the variable and insert that into the comment.
 
-    /**<<enter>>
-    foo = 1
-
-    -- becomes --
-
-    /**
-     * [foo description]
-     * @type {Number}
-     */
-    foo = 1
-
 If you press `shift+enter` after the opening `/**` then the docblock will be inserted inline.
 
-    /**<<shift+enter>>
-    bar = new Module();
-
-    -- becomes --
-    /** @type {Module} [bar description] */
-    bar = new Module();
+![](http://spadgos.github.io/sublime-jsdocs/images/vars.gif)
 
 DocBlockr will also try to determine the type of the variable from its name. Variables starting with `is` or `has` are assumed to be booleans, and `callback`, `cb`, `done`, `fn`, and `next` are assumed to be functions. If you use your own variable naming system (eg: hungarian notation: booleans all start with `b`, arrays start with `arr`), you can define these rules yourself. Modify the `jsdocs_notation_map` setting *(in `Base File.sublime-settings`)* like so:
 
-```javascript
+```json
 {
     "jsdocs_notation_map": [
         {
@@ -186,7 +98,7 @@ DocBlockr will also try to determine the type of the variable from its name. Var
 
 The notation map can also be used to add arbitrary tags, according to your own code conventions. For example, if your conventions state that functions beginning with an underscore are private, you could add this to the `jsdocs_notation_map`:
 
-```javascript
+```json
 {
     "prefix": "_",
     "tags": ["@private"]
@@ -197,56 +109,19 @@ The notation map can also be used to add arbitrary tags, according to your own c
 
 Pressing enter inside a docblock will automatically insert a leading asterisk and maintain your indentation.
 
-    /**
-     *  Foo bar<<enter>>
-     */
+![](http://spadgos.github.io/sublime-jsdocs/images/auto-indent.gif)
 
-    -- becomes --
-
-    /**
-     *  Foo bar
-     *  |
-     */
-
-    -- and --
-
-    /**
-     *  @param foo Lorem ipsum dolor sit amet, consectetur
-     *             adipisicing elit, sed do eiusmod tempor<<enter>>
-     */
-
-    -- becomes --
-
-    /**
-     *  @param foo Lorem ipsum dolor sit amet, consectetur
-     *             adipisicing elit, sed do eiusmod tempor
-     *             |
-     */
+![](http://spadgos.github.io/sublime-jsdocs/images/auto-indent-2.gif)
 
 This applies to docblock comments `/** like this */` as well as inline double-slash comments `// like this`
 
-    //   foo<<enter>>
-
-    -- becomes
-
-    //   foo
-    //   |
+![](http://spadgos.github.io/sublime-jsdocs/images/single-line.gif)
 
 In either case, you can press `shift+enter` to stop the automatic extension.
 
 Oftentimes, when documenting a parameter, or adding a description to a tag, your description will cover multiple lines. If the line you are on is directly following a tag line, pressing `tab` will move the indentation to the correct position.
 
-    /**
-     * @param {String} foo Lorem ipsum dolor sit amet
-     * |<<tab>>
-     */
-
-     -- becomes
-
-    /**
-     * @param {String} foo Lorem ipsum dolor sit amet
-     *                     |
-     */
+![](http://spadgos.github.io/sublime-jsdocs/images/deep-indent.gif)
 
 ### Comment decoration ###
 
