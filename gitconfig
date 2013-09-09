@@ -1,0 +1,14 @@
+[user]
+	name = Tsuyoshi MIYAMOTO
+	email = sakuemon@gmail.com
+[core]
+	excludesfile = /Users/miya/.gitignore_global
+	editor = vim -c \"set fenc=utf-8\"
+[difftool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	trustExitCode = true
+[merge]
+	ff = false
