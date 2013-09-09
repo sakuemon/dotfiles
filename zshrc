@@ -26,9 +26,27 @@ setopt list_packed
 export LANG=ja_JP.UTF-8
 PROMPT="[%F{magenta}%/%f]
 %% "
-#RPROMPT="[%/]"
 PROMPT2="%_%% "
 SPROMPT="%r is correct? [n,y,a,e]: "
+
+### RPROMPT (for vcs info)
+autoload -Uz vcs_info
+setopt promptsubst
+
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr ':S'
+zstyle ':vcs_info:*' unstagedstr ':U'
+zstyle ':vcs_info:*' enable git hg
+zstyle ':vcs_info:*' actionformats \
+	  '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}%c%u|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+	  '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}%c%u]%f '
+
+precmd() {
+	vcs_info
+}
+
+RPROMPT='${vcs_info_msg_0_}'
 
 #PATH
 export PATH=$PATH:$HOME/bin
@@ -72,3 +90,4 @@ if [ -s "$HOME/.phpenv/bin/phpenv" ] ; then ;
 fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
