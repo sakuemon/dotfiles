@@ -748,7 +748,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(\.)[a-zA-Z0-9_-]+</string>
+					<string>(\.)[a-zA-Z_][a-zA-Z0-9_-]*</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.class.css</string>
 				</dict>
@@ -762,7 +762,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(#)[a-zA-Z][a-zA-Z0-9_-]*</string>
+					<string>(#)[a-zA-Z_][a-zA-Z0-9_-]*</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.id.css</string>
 				</dict>
@@ -782,9 +782,23 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(:)((first|last)-child|(first|last|only)-of-type|empty|root|target|first|left|right)\b</string>
+					<string>(:+)((first|last|only)-child|(first|last|only)-of-type|empty|root|target|first-letter|first-line|first|left|right|lang)\b</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.pseudo-class.css</string>
+				</dict>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.css</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(:)(extend)\b</string>
+					<key>name</key>
+					<string>entity.other.attribute-name.pseudo-class.less</string>
 				</dict>
 				<dict>
 					<key>captures</key>
@@ -883,7 +897,7 @@
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>(:+)(?:-(?:webkit|moz|o)-)?(after|before|first-letter|first-line|selection)\b</string>
+					<string>(:+)(?:-(?:webkit|moz|o)-)?(after|before|selection)\b</string>
 					<key>name</key>
 					<string>entity.other.attribute-name.pseudo-element.css</string>
 				</dict>

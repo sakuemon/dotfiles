@@ -9,7 +9,9 @@
 	"ignored_packages":
 	[
 		"DocBlockr",
-		"CTags"
+		"CTags",
+		"SublimeCodeIntel",
+		"SublimeLinter"
 	],
 	"trailing_spaces_highlight_color": "invalid",
 	"trim_trailing_white_space_on_save": true,

@@ -3,8 +3,10 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
+		"AngularJS (CoffeeScript)",
 		"Auto Encoding for Ruby",
 		"BracketHighlighter",
+		"CoffeeScript",
 		"ConvertToUTF8",
 		"CTags",
 		"DocBlockr",
@@ -13,6 +15,7 @@
 		"ERB Insert and Toggle Commands",
 		"ERB Snippets",
 		"Function Name Display",
+		"JSHint",
 		"LESS",
 		"LineEndings",
 		"Live CSS",
@@ -20,6 +23,7 @@
 		"Package Control",
 		"QuickThemes",
 		"RSpec",
+		"SCSS",
 		"SideBarEnhancements",
 		"Simple Rails Navigator",
 		"SublimeClang",
