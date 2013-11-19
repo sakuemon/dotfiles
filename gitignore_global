@@ -4,4 +4,5 @@
 # for xcode
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
+*.xcworkspace/*
 !*.xcworkspace/contents.xcworkspacedata
