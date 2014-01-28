@@ -8,7 +8,6 @@ tap phinze/homebrew-cask || true
 install ack
 install autoconf
 install automake
-install byobu
 install cmake
 install colordiff
 install coreutils
@@ -18,7 +17,7 @@ install fontconfig
 install fontforge
 install freetype
 install gdbm
-install gettext
+#install gettext
 install git
 install gnu-sed
 install gnu-tar
@@ -78,4 +77,13 @@ cask install dash
 cask install divvy
 cask install bettertouchtool
 cask install shortcat
-
+cask install virtualbox
+cask install vagrant
+cask install skype
+cask install skype
+cask install clementine
+cask install gmail-notifr
+cask install sublime-text
+cask install sourcetree
+cask install vlc
+cask install yorufukurou
