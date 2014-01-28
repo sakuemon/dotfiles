@@ -64,6 +64,7 @@ linux*)
 	;;
 esac
 alias be="bundle exec"
+alias grep="ack"
 
 # for ruby(rbenv)
 if [ -s "$HOME/.rbenv/" ] ; then ;
