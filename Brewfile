@@ -4,14 +4,17 @@ upgrade
 tap homebrew/dupes || true
 tap josegonzalez/php || true
 tap phinze/homebrew-cask || true
+tap homebrew/binary || true
 
 install ack
 install autoconf
 install automake
+install boot2docker
 install cmake
 install colordiff
 install coreutils
 install ctags
+install docker
 install doxygen
 install fontconfig
 install fontforge
@@ -80,10 +83,12 @@ cask install shortcat
 cask install virtualbox
 cask install vagrant
 cask install skype
-cask install skype
 cask install clementine
 cask install gmail-notifr
 cask install sublime-text
 cask install sourcetree
 cask install vlc
 cask install yorufukurou
+cask install growlnotify
+cask install onyx
+cask install appcleaner
