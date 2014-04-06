@@ -5,6 +5,8 @@ tap homebrew/dupes || true
 tap josegonzalez/php || true
 tap phinze/homebrew-cask || true
 tap homebrew/binary || true
+tap thoughtbot/formulae || true
+tap jimbojsb/launchrocket || true
 
 install ack
 install autoconf
@@ -22,6 +24,7 @@ install freetype
 install gdbm
 #install gettext
 install git
+install gitsh
 install gnu-sed
 install gnu-tar
 install graphviz
@@ -92,3 +95,5 @@ cask install yorufukurou
 cask install growlnotify
 cask install onyx
 cask install appcleaner
+cask install launchrocket
+cask install xld
