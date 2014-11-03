@@ -17,3 +17,7 @@
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
+[push]
+	default = simple
+[url "git@github.com:"]
+	pushinsteadof = https://github.com/
