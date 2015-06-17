@@ -4,11 +4,12 @@
 [core]
 	excludesfile = /Users/miya/.gitignore_global
 	editor = vim -c \"set fenc=utf-8\"
+	autocrlf = input
 [difftool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
+	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --nosplash \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	cmd = /opt/homebrew-cask/Caskroom/diffmerge/4.2.0.697/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 	trustExitCode = true
 [merge]
 	ff = false
@@ -21,3 +22,7 @@
 	default = simple
 [url "git@github.com:"]
 	pushinsteadof = https://github.com/
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
