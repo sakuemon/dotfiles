@@ -2,34 +2,34 @@ set nocompatible
 " NEOVUNDLE {{{
 filetype off
 
-if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
-	call neobundle#rc(expand('~/.vim/bundle/'))
-endif
+" if has('vim_starting')
+" 	set runtimepath+=~/.vim/bundle/neobundle.vim/
+" 	call neobundle#rc(expand('~/.vim/bundle/'))
+" endif
 
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-rake'
-NeoBundle 'basyura/unite-rails'
-NeoBundle 'tsukkee/unite-tag'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-rails'
-
-NeoBundle 'thinca/vim-ref'
+" NeoBundle 'Shougo/neobundle.vim'
+" NeoBundle 'Shougo/neocomplcache'
+" NeoBundle 'Shougo/neosnippet'
+" NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'ujihisa/unite-rake'
+" NeoBundle 'basyura/unite-rails'
+" NeoBundle 'tsukkee/unite-tag'
+" NeoBundle 'tpope/vim-surround'
+" NeoBundle 'tpope/vim-rails'
+ 
+" NeoBundle 'thinca/vim-ref'
 
 " ide
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'vim-scripts/SrcExpl'
-NeoBundle 'taglist.vim'
-NeoBundle 'vim-scripts/Trinity'
-NeoBundle 'errormarker.vim'
+" NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'vim-scripts/SrcExpl'
+" NeoBundle 'taglist.vim'
+" NeoBundle 'vim-scripts/Trinity'
+" NeoBundle 'errormarker.vim'
 
 " lang
-NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'javacomplete'
-NeoBundle 'vim-coffee-script'
+" NeoBundle 'mattn/zencoding-vim'
+" NeoBundle 'javacomplete'
+" NeoBundle 'vim-coffee-script'
 
 " }}}
 
@@ -43,7 +43,7 @@ set shortmess+=I
 set helplang=ja,en
 
 " DOC
-helptags $HOME/.vim/doc
+" helptags $HOME/.vim/doc
 
 " SEARCH
 set incsearch      " インクリメンタルサーチ set hlsearch
@@ -83,6 +83,9 @@ syntax on
 set laststatus=2	" ステータスラインの表示設定。2=常に
 set statusline=%F%m%r%h%w\%=\[%Y][%{&fenc!=''?&fenc:&enc}]\[%{&ff}]\[POS=%04l,%04v]\[LEN=%L]
 set showcmd
+
+" TAB LINE
+set showtabline=2
 
 " BACKUP
 set backup			" バックアップする
