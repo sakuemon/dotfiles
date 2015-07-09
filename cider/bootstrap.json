@@ -19,6 +19,7 @@
         "karabiner",
         "launchrocket",
         "macvim-kaoriya",
+        "mysqlworkbench",
         "onyx",
         "robomongo",
         "sequel-pro",
@@ -40,6 +41,7 @@
     ],
     "formulas": [
         "ack",
+        "ag",
         "autoconf",
         "automake",
         "boot2docker",
