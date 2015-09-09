@@ -99,6 +99,10 @@ set foldlevelstart=99
 if has('path_extra')
 	set tags+=tags;$HOME/project
 endif
+
+" clipboard
+set clipboard+=unnamed
+
 " BASIC }}}
 
 " PLUGIN {{{
