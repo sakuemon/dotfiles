@@ -73,7 +73,6 @@ if [ -s "$HOME/.rbenv/" ] ; then ;
 #	source $HOME/.rbenv/completions/rbenv.zsh
 fi
 
-
 # for python(virtualenv)
 if [ -s "$HOME/.virtualenv" ] ; then ;
 	export WORKON_HOME=$HOME/.virtualenv
@@ -89,6 +88,10 @@ if [ -s "$HOME/.phpenv/bin/phpenv" ] ; then ;
 	export PATH=$PATH:$HOME/.phpenv/bin
 	eval "$(phpenv init -)"
 fi
+
+# for repls
+autoload -U anyrepl
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
