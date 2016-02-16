@@ -66,27 +66,10 @@ esac
 alias be="bundle exec"
 alias grep="ag"
 
-# for ruby(rbenv)
-if [ -s "$HOME/.rbenv/" ] ; then ;
-	export PATH="$HOME/.rbenv/bin:$PATH"
-	eval "$(rbenv init -)"
-#	source $HOME/.rbenv/completions/rbenv.zsh
-fi
-
-# for python(virtualenv)
-if [ -s "$HOME/.virtualenv" ] ; then ;
-	export WORKON_HOME=$HOME/.virtualenv
-	export PIP_RESPECT_VIRTUALENV=true
-	source `which virtualenvwrapper.sh`
-fi
-
-# for node(nvm)
-[[ -s "$HOME/.nvm/nvm.sh" ]] && . "$HOME/.nvm/nvm.sh"
-
-# for phpenv
-if [ -s "$HOME/.phpenv/bin/phpenv" ] ; then ;
-	export PATH=$PATH:$HOME/.phpenv/bin
-	eval "$(phpenv init -)"
+# for anyenv
+if [ -s "$HOME/.anyenv/bin/anyenv" ] ; then ;
+	export PATH="$HOME/.anyenv/bin:$PATH"
+	eval "$(anyenv init -)"
 fi
 
 # for repls
