@@ -5,6 +5,10 @@ SAVEHIST=500000
 setopt hist_ignore_dups
 setopt share_history
 bindkey -v
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 typeset -U path cdpath fpath manpath
