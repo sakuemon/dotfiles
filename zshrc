@@ -5,10 +5,6 @@ SAVEHIST=500000
 setopt hist_ignore_dups
 setopt share_history
 bindkey -v
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 typeset -U path cdpath fpath manpath
@@ -51,6 +47,16 @@ precmd() {
 }
 
 RPROMPT='${vcs_info_msg_0_}'
+
+# history search
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 
 #PATH
 export PATH=$PATH:$HOME/bin
