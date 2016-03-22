@@ -61,6 +61,7 @@
         "ossp-uuid",
         "pango",
         "pcre",
+        "peco",
         "phantomjs",
         "pixman",
         "pkg-config",
