@@ -1,11 +1,44 @@
-set nocompatible
-" NEOVUNDLE {{{
-filetype off
+" dein {{{
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" if has('vim_starting')
-" 	set runtimepath+=~/.vim/bundle/neobundle.vim/
-" 	call neobundle#rc(expand('~/.vim/bundle/'))
-" endif
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+execute 'set runtimepath^=' . s:dein_repo_dir
+
+call dein#begin(s:dein_dir)
+
+" Let dein manage dein
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+
+  let s:toml = '~/.config/nvim/dein.toml'
+  "let s:lazy_toml = '~/.config/nvim/dein_lazy.toml'
+  call dein#load_toml(s:toml, {'lazy': 0})
+  "call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+" call dein#update()
+" call dein#clear_state()
+
+
+if dein#check_install(['vimproc'])
+  call dein#instaall('Shougo/vimshell', { 'rev': '3787e5' })
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
+
+" }}}
+
+filetype plugin indent on
+
 
 " NeoBundle 'Shougo/neobundle.vim'
 " NeoBundle 'Shougo/neocomplcache'
@@ -31,7 +64,6 @@ filetype off
 " NeoBundle 'javacomplete'
 " NeoBundle 'vim-coffee-script'
 
-" }}}
 
 filetype plugin on
 

@@ -1,0 +1,5 @@
+set ignorecase
+
+set hlsearch
+
+map <C-g> :action MoveEditorToOppositeTabGroup<CR>
