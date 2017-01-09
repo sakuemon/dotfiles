@@ -2,4 +2,7 @@ set ignorecase
 
 set hlsearch
 
+set visualbell
+set noerrorbells
+
 map <C-g> :action MoveEditorToOppositeTabGroup<CR>

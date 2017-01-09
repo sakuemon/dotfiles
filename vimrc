@@ -38,38 +38,15 @@ endif
 " }}}
 
 filetype plugin indent on
-
-
-" NeoBundle 'Shougo/neobundle.vim'
-" NeoBundle 'Shougo/neocomplcache'
-" NeoBundle 'Shougo/neosnippet'
-" NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'ujihisa/unite-rake'
-" NeoBundle 'basyura/unite-rails'
-" NeoBundle 'tsukkee/unite-tag'
-" NeoBundle 'tpope/vim-surround'
-" NeoBundle 'tpope/vim-rails'
- 
-" NeoBundle 'thinca/vim-ref'
-
-" ide
-" NeoBundle 'scrooloose/nerdtree'
-" NeoBundle 'vim-scripts/SrcExpl'
-" NeoBundle 'taglist.vim'
-" NeoBundle 'vim-scripts/Trinity'
-" NeoBundle 'errormarker.vim'
-
-" lang
-" NeoBundle 'mattn/zencoding-vim'
-" NeoBundle 'javacomplete'
-" NeoBundle 'vim-coffee-script'
-
-
 filetype plugin on
 
 " BASIC {{{
 " message format
 set shortmess+=I
+
+" bells
+set visualbell t_vb=
+set noerrorbells
 
 " LANG
 set helplang=ja,en
