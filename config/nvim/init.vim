@@ -37,4 +37,7 @@ endif
 
 let g:deoplete#enable_at_startup = 1
 
-set clipboard=unnamed
+filetype plugin indent on
+syntax enable
+
+runtime! options.vim
