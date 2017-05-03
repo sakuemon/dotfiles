@@ -9,7 +9,7 @@
 			<string>/bin/launchctl</string>
 			<string>setenv</string>
 			<string>GOPATH</string>
-			<string>/Users/miya/projects/self/go_workspace</string>
+			<string>/Users/miya/Projects/go</string>
 		</array>
 		<key>RunAtLoad</key>
 		<true/>

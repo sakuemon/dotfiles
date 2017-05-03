@@ -94,3 +94,5 @@ export LD_LIBRARY_PATH=/usr/local/opt/openssl/lib:$LD_LIBRARY_PATH
 export CPATH=/usr/local/opt/openssl/include:$CPATH
 export LDFLAGS='/usr/local/opt/openssl/lib/libssl.dylib /usr/local/opt/openssl/lib/libcrypto.dylib'
 
+# for golang
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source /Users/miya/.gvm/scripts/gvm
