@@ -4,4 +4,5 @@ set -x XDG_CONFIG_HOME $HOME/.config
 
 alias vi=nvim
 alias rm='rm -i'
+alias grep=ag
 
