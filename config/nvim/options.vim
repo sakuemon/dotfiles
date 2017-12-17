@@ -51,7 +51,7 @@ syntax on
 
 " STATUS LINE
 set laststatus=2	" ステータスラインの表示設定。2=常に
-set statusline=%F%m%r%h%w\%=\[%Y][%{&fenc!=''?&fenc:&enc}]\[%{&ff}]\[POS=%04l,%04v]\[LEN=%L]
+" set statusline=%F%m%r%h%w\%=\[%Y][%{&fenc!=''?&fenc:&enc}]\[%{&ff}]\[POS=%04l,%04v]\[LEN=%L]
 set showcmd
 
 " TAB LINE
@@ -79,6 +79,22 @@ endif
 " BASIC }}}
 
 " PLUGIN {{{
+"" lightline.vim
+let g:lightline = {
+	\ 'colorscheme': 'Dracula',
+	\ 'active': {
+	\	'left':  [	['mode', 'paste'],
+	\				['gitbranch', 'readonly', 'filename', 'modified']],
+	\	'right': [ ['lineinfo'],
+	\				['fileformat', 'fileencoding', 'filetype', 'charvaluehex']],
+	\ },
+	\ 'component': {
+	\	'charvaluehex': '0x%B'
+	\ },
+	\ 'component_function': {
+	\	'gitbranch': 'fugitive#head',
+	\ }
+\ }
 
 " PLUGIN }}}
 
