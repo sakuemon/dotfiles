@@ -18,11 +18,18 @@ on_ft = 'toml'
 [[plugins]]
 repo = 'kannokanno/previm'
 
+# vcs
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# status
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# development
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
+repo = 'mileszs/ack.vim'
 
-[[plugins]]
-repo = 'itchyny/lightline.vim'

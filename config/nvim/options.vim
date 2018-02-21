@@ -96,6 +96,11 @@ let g:lightline = {
 	\ }
 \ }
 
+"" ack.vim
+if executable('ag')
+	let g:ackprg = 'ag --vimgrep'
+endif
+
 " PLUGIN }}}
 
 " FILETYPE {{{
