@@ -4,5 +4,6 @@ set hlsearch
 
 set visualbell
 set noerrorbells
+set clipboard+=unnamed
 
 map <C-g> :action MoveEditorToOppositeTabGroup<CR>
