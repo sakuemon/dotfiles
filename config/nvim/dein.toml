@@ -18,13 +18,15 @@ on_ft = 'toml'
 [[plugins]]
 repo = 'kannokanno/previm'
 
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+	let g:lightline = {'colorscheme': 'solarized dark'}
+'''
+
 # vcs
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
-# status
-[[plugins]]
-repo = 'itchyny/lightline.vim'
 
 # development
 [[plugins]]

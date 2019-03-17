@@ -1,5 +1,7 @@
 let s:dein_dir = expand('~/.cache/dein')
 
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 if !&compatible
   set nocompatible
 endif
