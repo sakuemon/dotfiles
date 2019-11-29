@@ -84,7 +84,7 @@ endif
 " PLUGIN {{{
 "" lightline.vim
 let g:lightline = {
-	\ 'colorscheme': 'Dracula',
+	\ 'colorscheme': 'darcula',
 	\ 'active': {
 	\	'left':  [	['mode', 'paste'],
 	\				['gitbranch', 'readonly', 'filename', 'modified']],
@@ -100,8 +100,8 @@ let g:lightline = {
 \ }
 
 "" ack.vim
-if executable('ag')
-	let g:ackprg = 'ag --vimgrep'
+if executable('pt')
+	let g:ackprg = 'pt --follow --nogroup --nocolor'
 endif
 
 " PLUGIN }}}
@@ -148,8 +148,11 @@ autocmd BufRead,BufNewFile *.css set filetype=css
 
 "" java {{{
 autocmd BufRead,BufNewFile *.java set filetype=java
-" autocmd FileType java setlocal omnifunc=javacomplete#Complete
-"autocmd FileType java setlocal tags+=$HOME/tags/tags.java
+" }}}
+
+"" typescript {{{
+autocmd BufRead,BufNewFile *.tsx set filetype=typescript
+autocmd BufRead,BufNewFile *.ts  set filetype=typescript
 " }}}
 
 
