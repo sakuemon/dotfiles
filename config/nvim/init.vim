@@ -43,3 +43,4 @@ filetype plugin indent on
 syntax enable
 
 runtime! options.vim
+runtime! plugins/*.vim

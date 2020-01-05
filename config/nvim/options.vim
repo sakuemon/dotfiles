@@ -109,10 +109,10 @@ endif
 " FILETYPE {{{
 filetype plugin on
 filetype indent on
-autocmd FileType *
-\   if &l:omnifunc == ''
-\ |   setlocal omnifunc=syntaxcomplete#Complete
-\ | endif
+"autocmd FileType *
+"\   if &l:omnifunc == ''
+"\ |   setlocal omnifunc=syntaxcomplete#Complete
+"\ | endif
 
 "" DEFAULT {{{
 autocmd BufRead,BufNewFile * setlocal foldmethod=marker
