@@ -22,6 +22,9 @@ set smartcase		" 大文字を含んでいたらcaseを区別 set wrapscan		" フ
 set inccommand=split
 
 
+" SPLIT
+set splitbelow
+set splitright
 
 " GREP
 "set grepprg=ack\ -a
@@ -157,3 +160,6 @@ autocmd BufRead,BufNewFile *.ts  set filetype=typescript
 
 
 " FILETYPE }}}
+
+nnoremap <silent> <C-w>\| :<C-u>vs<CR>
+nnoremap <silent> <C-w>- :<C-u>sp<CR>
