@@ -1,6 +1,4 @@
 {
-	"coc.preferences.jumpCommand": "tab drop",
-
 	"list.source.grep.command": "pt",
 	"list.source.grep.args": ["--nocolor", "--nogroup"],
 
