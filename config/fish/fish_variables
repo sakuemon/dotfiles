@@ -7,6 +7,7 @@ SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR __fish_init_3_x:\x1d
 SETUVAR _fish_abbr_dci:docker\x20image
 SETUVAR _fish_abbr_dcm:docker\x2dcompose
 SETUVAR _fish_abbr_dcn:docker\x20container
@@ -39,5 +40,6 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_user_abbreviations:view\x20nvim\x20\x2dR\x1edcn\x20docker\x20container\x1edci\x20docker\x20image\x1edcm\x20docker\x2dcompose
+SETUVAR fish_user_paths:/Users/miya/\x2econfig/nvm/13\x2e5\x2e0/bin
 SETUVAR fisher_active_prompt:es
-SETUVAR fisher_dependency_count:es
+SETUVAR fisher_dependency_count:es\x1ebass\x1envm

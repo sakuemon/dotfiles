@@ -11,5 +11,8 @@ abbr --add dcn docker container
 abbr --add dci docker image
 abbr --add dcm docker-compose
 
+set LANG ja_JP.UTF-8
 set PATH $HOME/go/bin $PATH
 
+# nvm
+set -x NVM_DIR "$HOME/.nvm"
