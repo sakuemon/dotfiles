@@ -11,11 +11,5 @@ abbr --add dcn docker container
 abbr --add dci docker image
 abbr --add dcm docker-compose
 
-set -x GOPATH $HOME/Projects/go
+set PATH $HOME/go/bin $PATH
 
-set PATH $GOPATH/bin $PATH
-
-# funcsions
-function gvm
-  bass source ~/.gvm/scripts/gvm ';' gvm $argv
-end

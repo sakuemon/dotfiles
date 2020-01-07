@@ -1,6 +1,3 @@
-set hidden
-set cmdheight=2
-
 let g:go_fmt_command = "~/go/bin/goimports"
 
 inoremap <silent><expr> <TAB>

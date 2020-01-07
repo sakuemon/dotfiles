@@ -26,8 +26,8 @@ set inccommand=split
 set splitbelow
 set splitright
 
-" GREP
-"set grepprg=ack\ -a
+" BUFFER
+set hidden
 
 " TAB
 " this is defalut setting.
@@ -35,7 +35,6 @@ set splitright
 set tabstop=4		" タブ幅
 set softtabstop=0	" タブキーを押したときに挿入される幅。0=tabstopの値。
 set shiftwidth=4	" インデント幅
-"set expandtab		" タブを空白に
 set autoindent		" 改行時、自動インデント
 set smartindent
 
@@ -59,6 +58,7 @@ syntax on
 set laststatus=2	" ステータスラインの表示設定。2=常に
 " set statusline=%F%m%r%h%w\%=\[%Y][%{&fenc!=''?&fenc:&enc}]\[%{&ff}]\[POS=%04l,%04v]\[LEN=%L]
 set showcmd
+set cmdheight=2
 
 " TAB LINE
 set showtabline=2
@@ -83,31 +83,6 @@ if has('nvim')
 endif
 
 " BASIC }}}
-
-" PLUGIN {{{
-"" lightline.vim
-let g:lightline = {
-	\ 'colorscheme': 'darcula',
-	\ 'active': {
-	\	'left':  [	['mode', 'paste'],
-	\				['gitbranch', 'readonly', 'filename', 'modified']],
-	\	'right': [ ['lineinfo'],
-	\				['fileformat', 'fileencoding', 'filetype', 'charvaluehex']],
-	\ },
-	\ 'component': {
-	\	'charvaluehex': '0x%B'
-	\ },
-	\ 'component_function': {
-	\	'gitbranch': 'fugitive#head',
-	\ }
-\ }
-
-"" ack.vim
-if executable('pt')
-	let g:ackprg = 'pt --follow --nogroup --nocolor'
-endif
-
-" PLUGIN }}}
 
 " FILETYPE {{{
 filetype plugin on
