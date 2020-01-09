@@ -6,9 +6,9 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-hook_add = """
-runtime! defx.vim
-"""
+hook_add = '''
+	runtime! plugins/defx.vim
+'''
 
 [[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
 repo = 'osyo-manga/vim-precious'
@@ -28,6 +28,7 @@ repo = 'kannokanno/previm'
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 	let g:lightline = {'colorscheme': 'solarized dark'}
+	runtime! ./plugins/lightline.vim
 '''
 
 # vcs
@@ -35,11 +36,12 @@ hook_add = '''
 repo = 'tpope/vim-fugitive'
 
 # development
-[[plugins]]
-repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'mileszs/ack.vim'
+hook_add = '''
+	runtime! plugins/ack.vim
+'''
 
 [[plugins]]
 repo = 'junegunn/fzf'
@@ -47,6 +49,9 @@ build = './install --all'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+hook_add = '''
+	runtime! ./plugins/fzf.vim
+'''
 
 [[plugins]]
 repo = 'maxmellon/vim-jsx-pretty'
@@ -55,4 +60,15 @@ repo = 'maxmellon/vim-jsx-pretty'
 repo = "neoclide/coc.nvim"
 merge = 0
 rev = "release"
+hook_add = '''
+	runtime! plugins/coc.vim
+'''
 
+[plugins.ftplugin]
+defx = '''
+call defx#custom#option('_', {
+    \ 'columns': 'indent:git:icons:filename',
+    \ 'show_ignored_files': 1,
+    \ })
+	runtime! plugins/defx.vim
+'''
