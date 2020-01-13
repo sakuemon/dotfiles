@@ -6,6 +6,7 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
+depends = ['defx-git']
 hook_add = '''
 	runtime! plugins/defx.vim
 '''
@@ -31,11 +32,22 @@ hook_add = '''
 	runtime! ./plugins/lightline.vim
 '''
 
-# vcs
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-# development
+[[plugins]]
+repo ='kristijanhusak/defx-git'
+hook_add = '''
+	let g:defx_git#indicators = {
+		\ 'Modified'  : '+',
+		\ 'Staged'    : '●',
+		\ 'Untracked' : '?',
+		\ 'Renamed'   : '➜',
+		\ 'Unmerged'  : '═',
+		\ 'Deleted'   : 'x',
+		\ 'Unknown'   : '?'
+		\ }
+'''
 
 [[plugins]]
 repo = 'mileszs/ack.vim'
