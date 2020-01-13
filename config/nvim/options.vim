@@ -133,7 +133,6 @@ autocmd BufRead,BufNewFile *.tsx set filetype=typescript
 autocmd BufRead,BufNewFile *.ts  set filetype=typescript
 " }}}
 
-
 " FILETYPE }}}
 
 nnoremap <silent> <C-w>\| :<C-u>vs<CR>
