@@ -9,8 +9,6 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-runtime! plugins/dein.vim
-
 filetype plugin indent on
 syntax enable
 

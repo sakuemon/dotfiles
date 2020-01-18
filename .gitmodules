@@ -1,0 +1,24 @@
+[submodule "config/nvim/pack/p0/start/lightline.vim"]
+	path = config/nvim/pack/p0/start/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "config/nvim/pack/p0/start/vim-fugitive"]
+	path = config/nvim/pack/p0/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "config/nvim/pack/p0/start/fzf.vim"]
+	path = config/nvim/pack/p0/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "config/nvim/pack/p0/start/coc.nvim"]
+	path = config/nvim/pack/p0/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "config/nvim/pack/p0/start/defx.nvim"]
+	path = config/nvim/pack/p0/start/defx.nvim
+	url = https://github.com/Shougo/defx.nvim.git
+[submodule "config/nvim/pack/p0/start/defx-git"]
+	path = config/nvim/pack/p0/start/defx-git
+	url = https://github.com/kristijanhusak/defx-git.git
+[submodule "config/nvim/pack/p0/start/fzf"]
+	path = config/nvim/pack/p0/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "config/nvim/pack/p0/start/pt.vim"]
+	path = config/nvim/pack/p0/start/pt.vim
+	url = https://github.com/nazo/pt.vim.git
