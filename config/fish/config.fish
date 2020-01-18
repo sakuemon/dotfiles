@@ -16,3 +16,6 @@ set PATH $HOME/go/bin $PATH
 
 # nvm
 set -x NVM_DIR "$HOME/.nvm"
+
+# go
+set -x GO111MODULE on
