@@ -2,18 +2,16 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/go/src/golang.org/x/tools
+cd ~/remote/dotfiles/config/fish
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +19 ~/go/src/golang.org/x/tools/imports/forward.go
-badd +25 ~/go/src/golang.org/x/tools/gopls/test/gopls_test.go
-badd +182 internal/testenv/testenv.go
-badd +130 go/packages/packagestest/export.go
+badd +0 config.fish
 argglobal
 %argdel
-edit go/packages/packagestest/export.go
+$argadd config.fish
+edit config.fish
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -29,12 +27,12 @@ setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 145 - ((85 * winheight(0) + 55) / 111)
+let s:l = 5 - ((4 * winheight(0) + 55) / 110)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-145
-normal! 017|
+5
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
