@@ -32,3 +32,6 @@
 	required = true
 [commit]
 	template = /Users/miya/.stCommitMsg
+
+[ghq]
+	root = ~/go/src
