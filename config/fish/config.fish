@@ -23,5 +23,5 @@ set -x GO111MODULE on
 # fzf
 set -x FZF_DEFAULT_OPTS "--no-height --no-reverse"
 set -x FZF_TMUX 1
-set -U FZF_ENABLE_OPEN_PREVIEW 1 
-set -U FZF_FIND_FILE_OPTS "--preview 'cat {}'" 
+set -x FZF_ENABLE_OPEN_PREVIEW 1 
+set -x FZF_FIND_FILE_OPTS "--preview 'cat {}'" 
