@@ -9,7 +9,8 @@ augroup MyAutoCmd
   autocmd!
 augroup END
 
-filetype plugin indent on
+filetype off
+filetype plugin indent off
 syntax enable
 
 runtime! options.vim

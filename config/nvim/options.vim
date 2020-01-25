@@ -84,57 +84,20 @@ if has('nvim')
 endif
 
 " BASIC }}}
+"
+" WINDOW
+nnoremap <silent> <C-w>\| :<C-u>vs<CR>
+nnoremap <silent> <C-w>- :<C-u>sp<CR>
 
 " FILETYPE {{{
 filetype plugin on
 filetype indent on
-"autocmd FileType *
-"\   if &l:omnifunc == ''
-"\ |   setlocal omnifunc=syntaxcomplete#Complete
-"\ | endif
 
-"" DEFAULT {{{
 autocmd BufRead,BufNewFile * setlocal foldmethod=marker
-" }}}
-
-""" see .vim/ftplugin/foobar.vim
-"" SHELL SCRIPT {{
-autocmd BufRead,BufNewFile *.sh setlocal filetype=sh
-autocmd FileType sh setlocal foldmethod=indent
-" }}}
-
-"" PHP {{{
-autocmd BufRead,BufNewFile *.php setlocal filetype=php
-autocmd BufRead,BufNewFile *.inc setlocal filetype=php
-" }}}
-
-"" Python {{{
-autocmd BufRead,BufNewFile *.py setlocal filetype=python
-autocmd FileType python setlocal formatoptions-=or
-" }}}
-
-"" HTML {{{
-autocmd BufRead,BufNewFile *.html set filetype=html
-autocmd BufRead,BufNewFile *.ctp set filetype=html
-autocmd BufRead,BufNewFile *.html let g:no_html_toolbar='no'
-autocmd BufRead,BufNewFile *.html let g:do_xhtml_mappings='yes'
-autocmd BufRead,BufNewFile *.html let g:html_default_charset='utf-8'
-" }}}
-
-"" css {{{
-autocmd BufRead,BufNewFile *.css set filetype=css
-" }}}
-
-"" java {{{
-autocmd BufRead,BufNewFile *.java set filetype=java
-" }}}
-
-"" typescript {{{
-autocmd BufRead,BufNewFile *.tsx set filetype=typescript
-autocmd BufRead,BufNewFile *.ts  set filetype=typescript
-" }}}
-
 " FILETYPE }}}
 
-nnoremap <silent> <C-w>\| :<C-u>vs<CR>
-nnoremap <silent> <C-w>- :<C-u>sp<CR>
+" LOCAL
+if filereadable(expand('~/.vimrc.local'))
+	source ~/.vimrc.local
+endif
+
