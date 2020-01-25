@@ -1,4 +1,4 @@
-        nnoremap <silent><buffer><expr> <CR> defx#async_action('drop')
+nnoremap <silent><buffer><expr> <CR> defx#async_action('drop')
 "nnoremap <silent><buffer><expr> c defx#do_action('copy')
 "nnoremap <silent><buffer><expr> m defx#do_action('move')
 "nnoremap <silent><buffer><expr> p defx#do_action('paste')
