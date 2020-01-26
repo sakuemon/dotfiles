@@ -28,3 +28,12 @@
 [submodule "config/nvim/pack/p0/start/vim-snippets"]
 	path = config/nvim/pack/p0/start/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "config/nvim/pack/p0/start/vimproc.vim"]
+	path = config/nvim/pack/p0/start/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "config/nvim/pack/p0/start/vim-quickrun"]
+	path = config/nvim/pack/p0/start/vim-quickrun
+	url = https://github.com/thinca/vim-quickrun.git
+[submodule "config/nvim/after/plugin/vimproc.vim"]
+	path = config/nvim/after/plugin/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
