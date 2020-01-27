@@ -31,3 +31,6 @@
 [submodule "config/nvim/after/plugin/vimproc.vim"]
 	path = config/nvim/after/plugin/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "config/nvim/pack/p0/start/defx-git"]
+	path = config/nvim/pack/p0/start/defx-git
+	url = https://github.com/kristijanhusak/defx-git.git
