@@ -38,3 +38,6 @@
 [submodule "config/nvim/pack/p0/start/ultisnips"]
 	path = config/nvim/pack/p0/start/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "config/nvim/pack/p0/start/fugitive-gitlab.vim"]
+	path = config/nvim/pack/p0/start/fugitive-gitlab.vim
+	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
