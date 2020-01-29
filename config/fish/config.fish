@@ -30,6 +30,9 @@ set -x FZF_FIND_FILE_OPTS "--preview 'cat {}'"
 bind \cf accept-autosuggestion
 bind -M insert \cf  accept-autosuggestion
 
+# direnv
+direnv hook fish | source
+
 #if test -f ~/.local.fish
 #	source ~/.local.fish
 #end
