@@ -41,3 +41,6 @@
 [submodule "config/nvim/pack/p0/start/fugitive-gitlab.vim"]
 	path = config/nvim/pack/p0/start/fugitive-gitlab.vim
 	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
+[submodule "config/nvim/pack/p0/start/vim-go"]
+	path = config/nvim/pack/p0/start/vim-go
+	url = https://github.com/fatih/vim-go.git
