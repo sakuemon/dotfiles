@@ -33,6 +33,6 @@ bind -M insert \cf  accept-autosuggestion
 # direnv
 direnv hook fish | source
 
-#if test -f ~/.local.fish
-#	source ~/.local.fish
-#end
+if test -f ~/.local.fish
+	source ~/.local.fish
+end
