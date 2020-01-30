@@ -9,18 +9,11 @@ set shortmess+=I
 set visualbell t_vb=
 set noerrorbells
 
-" LANG
-" set helplang=ja,en
-
-" DOC
-" helptags $HOME/.vim/doc
-
 " SEARCH & REPLACE
 set incsearch      " インクリメンタルサーチ set hlsearch
 set ignorecase
 set smartcase		" 大文字を含んでいたらcaseを区別 set wrapscan		" ファイルの最後に到達したら、最初から
 set inccommand=split
-
 
 " SPLIT
 set splitbelow
