@@ -1,3 +1,4 @@
+*.netrwhist
 *.pyc
 .DS_Store
 vim/bundle/
