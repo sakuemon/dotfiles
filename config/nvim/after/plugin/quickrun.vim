@@ -13,15 +13,15 @@ let g:quickrun_config._ = {
 
 let g:quickrun_config['go.lint'] = {
 	\ 'command' : 'golangci-lint',
-	\ 'cmdopt'  : 'run',
-	\ 'srcfile' : '.',
+	\ 'cmdopt'  : 'run --out-format tab',
+	\ 'srcfile' : expand("%:p:h"),
 	\ 'exec'    :'%c %o %s',
 	\}
 
 let g:quickrun_config['go.test'] = {
 	\ 'command' : 'go',
 	\ 'cmdopt'  : 'test -v',
-	\ 'srcfile' : './.',
+	\ 'srcfile' : expand("%:p:h"),
 	\ 'exec'    : '%c %o %s',
 	\}
 
