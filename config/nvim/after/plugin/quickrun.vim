@@ -11,11 +11,18 @@ let g:quickrun_config._ = {
 	\ 'outputter/buffer/close_on_empty' : 1,
 	\}
 
-let g:quickrun_config['golint'] = {
+let g:quickrun_config['go.lint'] = {
 	\ 'command' : 'golangci-lint',
-	\ 'exec': '%c run %s',
+	\ 'cmdopt'  : 'run %s',
+	\ 'exec'    :'%c %o %s',
+	\}
+
+let g:quickrun_config['go.test'] = {
+	\ 'command' : 'go',
+	\ 'cmdopt'  : 'test -v',
+	\ 'srcfile' : './.',
+	\ 'exec'    : '%c %o %s',
 	\}
 
 noremap [QRun] <Nop>
 nmap <Space>r [QRun]
-nnoremap [QRun]gl : <C-u>QuickRun golint<CR>
