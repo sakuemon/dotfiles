@@ -13,7 +13,8 @@ let g:quickrun_config._ = {
 
 let g:quickrun_config['go.lint'] = {
 	\ 'command' : 'golangci-lint',
-	\ 'cmdopt'  : 'run %s',
+	\ 'cmdopt'  : 'run',
+	\ 'srcfile' : '.',
 	\ 'exec'    :'%c %o %s',
 	\}
 
