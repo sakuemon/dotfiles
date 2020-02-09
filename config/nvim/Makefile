@@ -1,7 +1,10 @@
 GIT_CLONE := git clone
+GIT_PULL := git pull
 
 PACK := pack
 PACK_P0_START := $(PACK)/p0/start
+
+.DEFAULT_GOAL := plugins
 
 .PHONY: init plugins_install
 
@@ -25,10 +28,16 @@ init:
 	mkdir -p $(PACK_P0_START)
 
 define install-plugin-template
-$(1)_install: init
+$(1): init
+ifeq (, $(wildcard $(PACK_P0_START)/$(strip $(1))))
 	$(GIT_CLONE) $(2) $(PACK_P0_START)/$(strip $(1))
+else
+	@echo "$(strip $(1)) already installed."
+endif
 endef
+
 $(foreach repo, $(PLUGIN_REPOS), $(eval $(call install-plugin-template, $(basename $(notdir $(repo))), $(repo))))
 
-plugins_install: $(foreach repo, $(PLUGIN_REPOS), $(basename $(notdir $(repo)))_install)
+plugins: $(foreach repo, $(PLUGIN_REPOS), $(basename $(notdir $(repo))))
+
 
