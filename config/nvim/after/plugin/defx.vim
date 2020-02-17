@@ -1,5 +1,7 @@
-nnoremap <silent><C-f> :<C-u>Defx<CR>
-nnoremap <silent><C-F> :<C-u>Defx `expand('%:p:h')`<CR>
+noremap [Defx] <Nop>
+nmap <Space>f [Defx]
+nnoremap <silent>[Defx]r :<C-u>Defx<CR>
+nnoremap <silent>[Defx]f :<C-u>Defx `expand('%:p:h')`<CR>
 
 call defx#custom#option('_', {
     \ 'columns': 'indent:git:icons:filename',
