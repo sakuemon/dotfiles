@@ -1,5 +1,3 @@
-let g:go_fmt_command = "~/go/bin/goimports"
-
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
