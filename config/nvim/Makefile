@@ -22,7 +22,8 @@ PLUGIN_REPOS := \
 	https://github.com/neoclide/coc.nvim.git \
 	https://github.com/shumphrey/fugitive-gitlab.vim.git \
 	https://github.com/thinca/vim-quickrun.git \
-	https://github.com/tpope/vim-fugitive.git
+	https://github.com/tpope/vim-fugitive.git \
+	https://github.com/tpope/vim-commentary.git
 
 init:
 	mkdir -p $(PACK_P0_START)
