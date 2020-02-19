@@ -23,7 +23,8 @@ PLUGIN_REPOS := \
 	https://github.com/shumphrey/fugitive-gitlab.vim.git \
 	https://github.com/thinca/vim-quickrun.git \
 	https://github.com/tpope/vim-fugitive.git \
-	https://github.com/tpope/vim-commentary.git
+	https://github.com/tpope/vim-commentary.git \
+	https://github.com/morhetz/gruvbox.git
 
 init:
 	mkdir -p $(PACK_P0_START)
