@@ -19,7 +19,7 @@ nnoremap <silent><buffer><expr> yy defx#do_action('yank_path')
 nnoremap <silent><buffer><expr> h defx#do_action('toggle_ignored_files')
 "nnoremap <silent><buffer><expr> ; defx#do_action('repeat')
 nnoremap <silent><buffer><expr> < defx#do_action('cd', ['..'])
-"nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
+nnoremap <silent><buffer><expr> ~ defx#do_action('cd')
 nnoremap <silent><buffer><expr> q defx#do_action('quit')
 nnoremap <silent><buffer><expr> <Space> defx#do_action('toggle_select') . 'j'
 nnoremap <silent><buffer><expr> * defx#do_action('toggle_select_all')
