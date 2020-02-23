@@ -10,7 +10,6 @@ PACK_P0_START := $(PACK)/p0/start
 
 PLUGIN_REPOS := \
 	https://github.com/Shougo/defx.nvim.git \
-	https://github.com/Shougo/vimproc.vim.git \
 	https://github.com/SirVer/ultisnips.git \
 	https://github.com/christoomey/vim-tmux-navigator.git \
 	https://github.com/honza/vim-snippets.git \
@@ -21,10 +20,15 @@ PLUGIN_REPOS := \
 	https://github.com/nazo/pt.vim.git \
 	https://github.com/neoclide/coc.nvim.git \
 	https://github.com/shumphrey/fugitive-gitlab.vim.git \
-	https://github.com/thinca/vim-quickrun.git \
 	https://github.com/tpope/vim-fugitive.git \
 	https://github.com/tpope/vim-commentary.git \
-	https://github.com/morhetz/gruvbox.git
+	https://github.com/morhetz/gruvbox.git \
+	https://github.com/sbdchd/neoformat.git \
+	https://github.com/arp242/switchy.vim.git \
+	https://github.com/andymass/vim-matchup.git \
+	https://github.com/romainl/vim-qf.git \
+	https://github.com/mh21/errormarker.vim.git \
+	https://github.com/skywind3000/asyncrun.vim.git
 
 init:
 	mkdir -p $(PACK_P0_START)
