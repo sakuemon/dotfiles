@@ -28,7 +28,8 @@ PLUGIN_REPOS := \
 	https://github.com/andymass/vim-matchup.git \
 	https://github.com/romainl/vim-qf.git \
 	https://github.com/mh21/errormarker.vim.git \
-	https://github.com/skywind3000/asyncrun.vim.git
+	https://github.com/skywind3000/asyncrun.vim.git \
+	https://github.com/albertomontesg/lightline-asyncrun.git
 
 init:
 	mkdir -p $(PACK_P0_START)

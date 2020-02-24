@@ -3,8 +3,9 @@ let g:lightline = {
 	\	'left':  [['mode', 'paste'],
 	\		['gitbranch', 'readonly', 'filename', 'modified']],
 	\	'right': [ ['lineinfo'],
-	\		['fileformat', 'fileencoding', 'filetype', 'charvaluehex']],
-	\ },
+	\		['fileformat', 'fileencoding', 'filetype', 'charvaluehex'],
+	\ ['asyncrun_status']
+	\]},
 	\ 'component': {
 	\	'charvaluehex': '0x%B'
 	\ },
@@ -23,6 +24,10 @@ let g:lightline.tab_component_function = {
 	\ 'modified': 'lightline#tab#modified',
 	\ 'tabnum': 'lightline#tab#tabnum'
 \}
+
+let g:lightline.component_expand = {
+	\ 'asyncrun_status': 'lightline#asyncrun#status',
+	\}
 
 function! LighlineFugitive()
 	return exists('*fugitive#head') ? fugitive#head() : ''
