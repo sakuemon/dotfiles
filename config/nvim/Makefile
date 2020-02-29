@@ -6,7 +6,7 @@ PACK_P0_START := $(PACK)/p0/start
 
 .DEFAULT_GOAL := plugins
 
-.PHONY: init plugins_install
+.PHONY: init plugins
 
 PLUGIN_REPOS := \
 	https://github.com/Shougo/defx.nvim.git \
@@ -29,7 +29,8 @@ PLUGIN_REPOS := \
 	https://github.com/romainl/vim-qf.git \
 	https://github.com/mh21/errormarker.vim.git \
 	https://github.com/skywind3000/asyncrun.vim.git \
-	https://github.com/albertomontesg/lightline-asyncrun.git
+	https://github.com/albertomontesg/lightline-asyncrun.git \
+	https://github.com/buoto/gotests-vim.git
 
 init:
 	mkdir -p $(PACK_P0_START)
@@ -46,5 +47,6 @@ endef
 $(foreach repo, $(PLUGIN_REPOS), $(eval $(call install-plugin-template, $(basename $(notdir $(repo))), $(repo))))
 
 plugins: $(foreach repo, $(PLUGIN_REPOS), $(basename $(notdir $(repo))))
+
 
 
