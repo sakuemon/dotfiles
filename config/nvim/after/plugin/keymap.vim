@@ -3,10 +3,11 @@ noremap [Run] <Nop>
 nmap <Space>r [Run]
 
 " fzf
-noremap [Fzf] <Nop>
-nmap <Space>z [Fzf]
-nnoremap <silent>[Fzf]f : <C-u>Files<CR>
-nnoremap <silent>[Fzf]b : <C-u>Buffers<CR>
+noremap [fzf] <Nop>
+nmap <Space>z [fzf]
+nnoremap <silent>[fzf]f : <C-u>Files<CR>
+nnoremap <silent>[fzf]b : <C-u>Buffers<CR>
+nnoremap [fzf]r : <C-u>Rg<Space>
 
 " defx
 noremap [Defx] <Nop>
