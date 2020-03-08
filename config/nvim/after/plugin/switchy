@@ -1,9 +1,0 @@
-command! Switch call switchy#switch('split', 'sbuf')
-
-noremap [Swtch] <Nop>
-nmap <Space>a [Switch]
-
-nnoremap [Switch]e :call switchy#switch('edit', 'sbuf')<CR>
-nnoremap [Switch]s :call switchy#switch('split', 'sbuf')<CR>
-nnoremap [Switch]v :call switchy#switch('vsplit', 'sbuf')<CR>
-nnoremap [Switch]t :call switchy#switch('tabedit', 'sbuf')<CR>

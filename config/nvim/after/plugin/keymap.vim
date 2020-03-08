@@ -4,26 +4,23 @@ nmap <Space>r [Run]
 
 " fzf
 noremap [fzf] <Nop>
-nmap <Space>z [fzf]
+nmap <Space>f [fzf]
 nnoremap <silent>[fzf]f : <C-u>Files<CR>
 nnoremap <silent>[fzf]b : <C-u>Buffers<CR>
-nnoremap [fzf]r : <C-u>Rg<Space>
+nnoremap         [fzf]m : <C-u>Rg<Space>
 
 " defx
 noremap [Defx] <Nop>
-nmap <Space>f [Defx]
+nmap <Space>z [Defx]
 nnoremap <silent>[Defx]r :<C-u>Defx<CR>
 nnoremap <silent>[Defx]f :<C-u>Defx `expand('%:p:h')`<CR>
 
 " quickfix
-noremap [QFix] <Nop>
-nmap <Space>q [QFix]
-nnoremap [QFix]j : <C-u>cnext<CR>
-nnoremap [QFix]k : <C-u>cprevious<CR>
-nnoremap [QFix]l : <C-u>clast<CR>
-nnoremap [QFix]f : <C-u>cfirst<CR>
-nnoremap [QFix]q : <C-u>cclose<CR>
-nnoremap [QFix]o : <C-u>copen<CR>
+nnoremap <C-S-j> : <C-u>cnext<CR>
+nnoremap <C-S-k> : <C-u>cprevious<CR>
+nnoremap <C-S-o> : <C-u>copen<CR>
+nnoremap <C-S-q> : <C-u>cclose<CR>
+
 
 " switchy
 command! Switch call switchy#switch('split', 'sbuf')
