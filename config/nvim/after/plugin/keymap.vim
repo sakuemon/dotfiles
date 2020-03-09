@@ -16,10 +16,10 @@ nnoremap <silent>[Defx]r :<C-u>Defx<CR>
 nnoremap <silent>[Defx]f :<C-u>Defx `expand('%:p:h')`<CR>
 
 " quickfix
-nnoremap <C-S-j> : <C-u>cnext<CR>
-nnoremap <C-S-k> : <C-u>cprevious<CR>
-nnoremap <C-S-o> : <C-u>copen<CR>
-nnoremap <C-S-q> : <C-u>cclose<CR>
+nnoremap <C-q><C-j> : <C-u>cnext<CR>
+nnoremap <C-q><C-k> : <C-u>cprevious<CR>
+nnoremap <C-q><C-o> : <C-u>copen<CR>
+nnoremap <C-q><C-q> : <C-u>cclose<CR>
 
 
 " switchy
