@@ -1,5 +1,6 @@
 GIT_CLONE := git clone
-GIT_PULL := git pull
+GIT_FETCH_ORIGIN := git fetch  origin master
+GIT_UPDATE := git reset --hard origin/master
 
 PACK := pack
 PACK_P0_START := $(PACK)/p0/start
@@ -43,11 +44,19 @@ ifeq (, $(wildcard $(PACK_P0_START)/$(strip $(1))))
 else
 	@echo "$(strip $(1)) already installed."
 endif
+
+$(1)-update:
+ifeq (, $(wildcard $(PACK_P0_START)/$(strip $(1))))
+	@echo "$(strip $(1)) not installed."
+else
+	cd $(PACK_P0_START)/$(strip $(1)); $(GIT_FETCH_ORIGIN); $(GIT_UPDATE)
+endif
 endef
 
 $(foreach repo, $(PLUGIN_REPOS), $(eval $(call install-plugin-template, $(basename $(notdir $(repo))), $(repo))))
 
 plugins: $(foreach repo, $(PLUGIN_REPOS), $(basename $(notdir $(repo))))
 
+plugins-update: $(foreach repo, $(PLUGIN_REPOS), $(basename $(notdir $(repo)))-update)
 
 
