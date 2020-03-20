@@ -21,7 +21,6 @@ nnoremap <C-q><C-k> : <C-u>cprevious<CR>
 nnoremap <C-q><C-o> : <C-u>copen<CR>
 nnoremap <C-q><C-q> : <C-u>cclose<CR>
 
-
 " switchy
 command! Switch call switchy#switch('split', 'sbuf')
 noremap [Swtch] <Nop>
@@ -32,9 +31,23 @@ nnoremap [Switch]v :call switchy#switch('vsplit', 'sbuf')<CR>
 nnoremap [Switch]t :call switchy#switch('tabedit', 'sbuf')<CR>
 
 " tmux
-nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-w>h :TmuxnavigateLeft<cr>
 nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
 nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
 nnoremap <silent> <C-w>\\ :TmuxNavigatePrevious<cr>
 
+" window
+nnoremap s <Nop>
+nnoremap sH <C-w>H
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+call submode#enter_with('winsize', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('winsize', 'n', '', 's<', '<C-w><')
+call submode#enter_with('winsize', 'n', '', 's+', '<C-w>-')
+call submode#enter_with('winsize', 'n', '', 's-', '<C-w>+')
+call submode#map('winsize', 'n', '', '>', '<C-w>>')
+call submode#map('winsize', 'n', '', '<', '<C-w><')
+call submode#map('winsize', 'n', '', '+', '<C-w>-')
+call submode#map('winsize', 'n', '', '-', '<C-w>+')

@@ -32,7 +32,8 @@ PLUGIN_REPOS := \
 	https://github.com/albertomontesg/lightline-asyncrun.git \
 	https://github.com/buoto/gotests-vim.git \
 	https://github.com/sebdah/vim-delve.git \
-	https://github.com/benmills/vimux.git
+	https://github.com/benmills/vimux.git \
+	https://github.com/kana/vim-submode.git
 
 init:
 	mkdir -p $(PACK_P0_START)
