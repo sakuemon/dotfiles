@@ -11,6 +11,7 @@ nnoremap [Run]t : <C-u>AsyncRun go test -v "%:h"/**<CR>
 
 " vim-delve
 let g:delve_use_vimux = 1
+let g:VimuxUseNearest = 0
 nnoremap [Delve] <Nop>
 nmap <Space>0 [Delve]
 nnoremap <silent> [Delve]b : <C-u>DlvToggleBreakpoint<CR>
