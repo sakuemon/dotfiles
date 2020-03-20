@@ -5,9 +5,9 @@ GIT_UPDATE := git reset --hard origin/master
 PACK := pack
 PACK_P0_START := $(PACK)/p0/start
 
-.DEFAULT_GOAL := plugins
+.DEFAULT_GOAL := plugins-update
 
-.PHONY: init plugins
+.PHONY: init plugins plugins-update
 
 PLUGIN_REPOS := \
 	https://github.com/Shougo/defx.nvim.git \
