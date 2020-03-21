@@ -31,7 +31,7 @@ nnoremap [Switch]v :call switchy#switch('vsplit', 'sbuf')<CR>
 nnoremap [Switch]t :call switchy#switch('tabedit', 'sbuf')<CR>
 
 " tmux
-nnoremap <silent> <C-w>h :TmuxnavigateLeft<cr>
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
 nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
 nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
