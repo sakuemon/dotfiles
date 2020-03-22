@@ -1,16 +1,18 @@
 let g:lightline = {
 	\ 'active': {
-	\	'left':  [['mode', 'paste'],
-	\		['gitbranch', 'readonly', 'filename', 'modified']],
+	\	'left': [ ['mode', 'paste'],
+	\		['gitbranch', 'readonly', 'filename', 'modified', 'method'],
+	\	],
 	\	'right': [ ['lineinfo'],
 	\		['fileformat', 'fileencoding', 'filetype', 'charvaluehex'],
-	\ ['asyncrun_status']
+	\       ['asyncrun_status']
 	\]},
 	\ 'component': {
 	\	'charvaluehex': '0x%B'
 	\ },
 	\ 'component_function': {
-	\	'gitbranch': 'LighlineFugitive',
+	\	'gitbranch': 'LightlineFugitive',
+	\   'method': 'NearestMethodOrFunction',
 	\ }
 \ }
 
