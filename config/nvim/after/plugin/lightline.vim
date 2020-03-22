@@ -31,8 +31,12 @@ let g:lightline.component_expand = {
 	\ 'asyncrun_status': 'lightline#asyncrun#status',
 	\}
 
-function! LighlineFugitive()
-	return exists('*fugitive#head') ? fugitive#head() : ''
+function! LightlineFugitive()
+	if exists('*FugitiveHead')
+		let branch = FugitiveHead()
+		return branch !=# '' ? ''.branch : ''
+	endif
+	return ''
 endfunction
 
 function! LightlineTabFilename(n) abort
@@ -41,3 +45,4 @@ function! LightlineTabFilename(n) abort
 	let _ = pathshorten(expand('#'.buflist[winnr - 1].':f'))
 	return _ !=# '' ? _ : '[No Namem]'
 endfunction
+
