@@ -1,0 +1,76 @@
+# Snippets for Go
+
+priority -10
+
+snippet fnc "func with commend"
+// $1
+func ${1:fn}(${2:arg}) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet anno "fn := func() { ... }"
+${1:fn} := func() {
+	${2:${VISUAL}}
+}
+${0}
+endsnippet
+
+# append
+snippet ap= "s = append(s, value)"
+${1:slice} = append($1, ${0:slice})
+endsnippet
+
+# channel
+snippet ch "chan type"
+chan ${0:int}
+endsnippet
+
+# else
+snippet else
+else {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# if err
+snippet ife "if with inline error"
+if err := ${1:condigion}; err != nil {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# if ok
+snippet ifok "if ok { ... }"
+if ok {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ifng "if !ok { ... }"
+if !ok {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# err != nil
+snippet rete "if err := nil { return err }"
+if err := nil {
+	return err
+}
+endsnippet
+
+# for range
+snippet fore "for k,v := range slice { ... }"
+for ${2:k}, ${3:v} := range ${1} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# for int
+snippet fori "for 0..N-1 { ... }"
+for ${1:i} := 0; $1 < ${2:N}; $1++ {
+	${0:${VISUAL}}
+}
+endsnippet
+
