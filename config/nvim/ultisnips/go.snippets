@@ -35,7 +35,7 @@ endsnippet
 
 # if err
 snippet ife "if with inline error"
-if err := ${1:condigion}; err != nil {
+if err := ${1:condition}; err != nil {
 	${0:${VISUAL}}
 }
 endsnippet
@@ -74,3 +74,10 @@ for ${1:i} := 0; $1 < ${2:N}; $1++ {
 }
 endsnippet
 
+snippet tag "tag"
+\`${1}:"${2}"\`
+endsnippet
+
+snippet tagv "validate tag"
+\`validate:"${1:tag}"\`
+endsnippet
