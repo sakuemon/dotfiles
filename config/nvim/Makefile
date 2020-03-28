@@ -27,14 +27,14 @@ PLUGIN_REPOS := \
 	https://github.com/arp242/switchy.vim.git \
 	https://github.com/andymass/vim-matchup.git \
 	https://github.com/romainl/vim-qf.git \
-	https://github.com/mh21/errormarker.vim.git \
 	https://github.com/skywind3000/asyncrun.vim.git \
 	https://github.com/albertomontesg/lightline-asyncrun.git \
 	https://github.com/buoto/gotests-vim.git \
 	https://github.com/sebdah/vim-delve.git \
 	https://github.com/benmills/vimux.git \
 	https://github.com/kana/vim-submode.git \
-	https://github.com/liuchengxu/vista.vim.git
+	https://github.com/liuchengxu/vista.vim.git \
+	https://github.com/mhinz/vim-startify.git
 
 init:
 	mkdir -p $(PACK_P0_START)

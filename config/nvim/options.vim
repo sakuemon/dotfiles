@@ -51,7 +51,6 @@ syntax on
 
 " STATUS LINE
 set laststatus=2	" ステータスラインの表示設定。2=常に
-" set statusline=%F%m%r%h%w\%=\[%Y][%{&fenc!=''?&fenc:&enc}]\[%{&ff}]\[POS=%04l,%04v]\[LEN=%L]
 set showcmd
 set cmdheight=2
 
@@ -59,10 +58,10 @@ set cmdheight=2
 set showtabline=2
 
 " BACKUP
-" set backup			" バックアップする
-" set backupdir=$HOME/.vim/backup	" バックアップディレクトリ
-" let &directory=&backupdir			" スワップディレクトリ
 set noswapfile
+
+" SESSION
+set sessionoptions="blank,buffers,curdir,folds,winsize,help,tabpages,terminal"
 
 " FOLDING
 set foldlevelstart=99
