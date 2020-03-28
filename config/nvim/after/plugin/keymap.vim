@@ -45,9 +45,9 @@ nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 call submode#enter_with('winsize', 'n', '', 's>', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', 's<', '<C-w><')
-call submode#enter_with('winsize', 'n', '', 's+', '<C-w>-')
-call submode#enter_with('winsize', 'n', '', 's-', '<C-w>+')
+call submode#enter_with('winsize', 'n', '', 's_', '<C-w>-')
+call submode#enter_with('winsize', 'n', '', 's^', '<C-w>+')
 call submode#map('winsize', 'n', '', '>', '<C-w>>')
 call submode#map('winsize', 'n', '', '<', '<C-w><')
-call submode#map('winsize', 'n', '', '+', '<C-w>-')
-call submode#map('winsize', 'n', '', '-', '<C-w>+')
+call submode#map('winsize', 'n', '', '_', '<C-w>-')
+call submode#map('winsize', 'n', '', '^', '<C-w>+')
