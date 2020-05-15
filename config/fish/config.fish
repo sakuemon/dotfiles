@@ -21,6 +21,7 @@ set -x NVM_DIR "$HOME/.nvm"
 set -x GO111MODULE on
 
 # fzf
+set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_DEFAULT_OPTS "--no-height --no-reverse --bind 'right:select-all,left:deselect-all'"
 set -x FZF_TMUX 1
 set -x FZF_ENABLE_OPEN_PREVIEW 1 
