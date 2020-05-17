@@ -79,8 +79,8 @@ endif
 " BASIC }}}
 "
 " WINDOW
-nnoremap <silent> <C-w>\| :<C-u>vs<CR>
-nnoremap <silent> <C-w>- :<C-u>sp<CR>
+nnoremap <silent> <C-w>v :<C-u>vs<CR>
+nnoremap <silent> <C-w>x :<C-u>sp<CR>
 
 " FILETYPE {{{
 filetype plugin on
