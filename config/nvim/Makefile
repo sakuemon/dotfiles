@@ -35,7 +35,7 @@ PLUGIN_REPOS := \
 	https://github.com/kana/vim-submode.git \
 	https://github.com/liuchengxu/vista.vim.git \
 	https://github.com/mhinz/vim-startify.git \
-	https://github.com/jiangmiao/auto-pairs.git
+	https://github.com/machakann/vim-sandwich.git
 
 init:
 	mkdir -p $(PACK_P0_START)
