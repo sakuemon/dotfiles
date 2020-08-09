@@ -9,6 +9,12 @@ set shortmess+=I
 set visualbell t_vb=
 set noerrorbells
 
+" spell check
+set spell
+set spelllang=en,cjk
+hi clear SpellBad
+hi SpellBad cterm=underline
+
 " SEARCH & REPLACE
 set incsearch      " インクリメンタルサーチ set hlsearch
 set ignorecase
