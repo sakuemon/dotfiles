@@ -12,30 +12,31 @@ PACK_P0_START := $(PACK)/p0/start
 PLUGIN_REPOS := \
 	https://github.com/Shougo/defx.nvim.git \
 	https://github.com/SirVer/ultisnips.git \
+	https://github.com/airblade/vim-gitgutter.git \
+	https://github.com/albertomontesg/lightline-asyncrun.git \
+	https://github.com/andymass/vim-matchup.git \
+	https://github.com/arp242/switchy.vim.git \
+	https://github.com/benmills/vimux.git \
+	https://github.com/buoto/gotests-vim.git \
 	https://github.com/christoomey/vim-tmux-navigator.git \
 	https://github.com/honza/vim-snippets.git \
 	https://github.com/itchyny/lightline.vim.git \
 	https://github.com/junegunn/fzf \
 	https://github.com/junegunn/fzf.vim.git \
-	https://github.com/kristijanhusak/defx-git.git \
-	https://github.com/neoclide/coc.nvim.git \
-	https://github.com/shumphrey/fugitive-gitlab.vim.git \
-	https://github.com/tpope/vim-fugitive.git \
-	https://github.com/tpope/vim-commentary.git \
-	https://github.com/morhetz/gruvbox.git \
-	https://github.com/sbdchd/neoformat.git \
-	https://github.com/arp242/switchy.vim.git \
-	https://github.com/andymass/vim-matchup.git \
-	https://github.com/romainl/vim-qf.git \
-	https://github.com/skywind3000/asyncrun.vim.git \
-	https://github.com/albertomontesg/lightline-asyncrun.git \
-	https://github.com/buoto/gotests-vim.git \
-	https://github.com/sebdah/vim-delve.git \
-	https://github.com/benmills/vimux.git \
 	https://github.com/kana/vim-submode.git \
+	https://github.com/kristijanhusak/defx-git.git \
 	https://github.com/liuchengxu/vista.vim.git \
+	https://github.com/machakann/vim-sandwich.git \
 	https://github.com/mhinz/vim-startify.git \
-	https://github.com/machakann/vim-sandwich.git
+	https://github.com/morhetz/gruvbox.git \
+	https://github.com/neoclide/coc.nvim.git \
+	https://github.com/romainl/vim-qf.git \
+	https://github.com/sbdchd/neoformat.git \
+	https://github.com/sebdah/vim-delve.git \
+	https://github.com/shumphrey/fugitive-gitlab.vim.git \
+	https://github.com/skywind3000/asyncrun.vim.git \
+	https://github.com/tpope/vim-commentary.git \
+	https://github.com/tpope/vim-fugitive.git
 
 init:
 	mkdir -p $(PACK_P0_START)
