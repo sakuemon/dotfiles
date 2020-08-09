@@ -4,6 +4,9 @@ set -x XDG_CONFIG_HOME $HOME/.config
 
 set LANG ja_JP.UTF-8
 set PATH $HOME/go/bin $PATH
+set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+set PATH /usr/local/opt/findutils/libexec/gnubin $PATH
+
 set EDITOR vim
 
 # common
