@@ -1,3 +1,6 @@
+" noh, clean anzu-status
+nmap <Esc><Esc> <Plug>(anzu-clear-search-status):nohl<CR>
+
 " asyncrun
 noremap [Run] <Nop>
 nmap <Space>r [Run]
@@ -51,3 +54,4 @@ call submode#map('winsize', 'n', '', '>', '<C-w>>')
 call submode#map('winsize', 'n', '', '<', '<C-w><')
 call submode#map('winsize', 'n', '', '_', '<C-w>-')
 call submode#map('winsize', 'n', '', '^', '<C-w>+')
+

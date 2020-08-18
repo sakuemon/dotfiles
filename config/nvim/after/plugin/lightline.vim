@@ -1,7 +1,7 @@
 let g:lightline = {
 	\ 'active': {
 	\	'left': [ ['mode', 'paste'],
-	\		['gitbranch', 'readonly', 'filename', 'modified', 'method'],
+	\		['gitbranch', 'readonly', 'filename', 'modified', 'method', 'anzu'],
 	\	],
 	\	'right': [ ['lineinfo'],
 	\		['fileformat', 'fileencoding', 'filetype', 'charvaluehex'],
@@ -11,8 +11,9 @@ let g:lightline = {
 	\	'charvaluehex': '0x%B'
 	\ },
 	\ 'component_function': {
+	\   'anzu': 'anzu#search_status',
 	\	'gitbranch': 'LightlineFugitive',
-	\   'method': 'NearestMethodOrFunction',
+	\	'method': 'NearestMethodOrFunction',
 	\ }
 \ }
 

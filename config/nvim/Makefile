@@ -19,6 +19,7 @@ PLUGIN_REPOS := \
 	https://github.com/benmills/vimux.git \
 	https://github.com/buoto/gotests-vim.git \
 	https://github.com/christoomey/vim-tmux-navigator.git \
+	https://github.com/haya14busa/vim-asterisk.git \
 	https://github.com/honza/vim-snippets.git \
 	https://github.com/itchyny/lightline.vim.git \
 	https://github.com/junegunn/fzf \
@@ -30,6 +31,7 @@ PLUGIN_REPOS := \
 	https://github.com/mhinz/vim-startify.git \
 	https://github.com/morhetz/gruvbox.git \
 	https://github.com/neoclide/coc.nvim.git \
+	https://github.com/osyo-manga/vim-anzu.git \
 	https://github.com/romainl/vim-qf.git \
 	https://github.com/sbdchd/neoformat.git \
 	https://github.com/sebdah/vim-delve.git \
