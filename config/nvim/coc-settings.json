@@ -1,26 +1,42 @@
 {
-	"coc.preferences.formatOnType": true,
-	"coc.preferences.formatOnSaveFileTypes": ["go", "typescript", "json"],
+    "coc.preferences.formatOnType": true,
+    "coc.preferences.formatOnSaveFileTypes": ["go", "typescript", "json"],
 
-	"list.source.grep.command": "pt",
-	"list.source.grep.args": ["--nocolor", "--nogroup"],
+    "list.source.grep.command": "pt",
+    "list.source.grep.args": ["--nocolor", "--nogroup"],
 
-	"suggest.noselect":false,
-	"suggest.preferCompleteThanJumpPlaceholder":true,
+    "suggest.noselect":false,
+    "suggest.preferCompleteThanJumpPlaceholder":true,
 
-	"tsserver.enableJavascript": true,
-	"eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
+    "tsserver.enableJavascript": true,
+    "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
+    "typescript.format.enabled": true,
+    "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+    "typescript.format.insertSpaceAfterTypeAssertion": true,
+    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
 
-	"languageserver": {
-		"golang": {
-			"command": "~/go/bin/gopls",
-			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-			"filetypes": ["go"],
-			"initializationOptions": {
-				"diagnosticsEnabled": true,
-				"formatTool": "goimports",
-				"completeUnimported": true
-			}
-		}
-	},
+    "languageserver": {
+        "golang": {
+            "command": "~/go/bin/gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"],
+            "initializationOptions": {
+                "diagnosticsEnabled": true,
+                "formatTool": "goimports",
+                "completeUnimported": true
+            }
+        },
+        "sql": {
+            "command": "sqls",
+            "args": ["-log", "~/tmp/sqls.log", "-trace", "-config", "$HOME/.config/sqls/config.yml"],
+            "filetypes": ["sql"],
+            "shell": true
+        }
+    },
 }
