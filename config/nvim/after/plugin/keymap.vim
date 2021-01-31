@@ -8,7 +8,7 @@ nmap <Space>r [Run]
 " fzf
 noremap [fzf] <Nop>
 nmap <Space>f [fzf]
-nnoremap <silent>[fzf]f : <C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent>[fzf]f : <C-u>CocCommand fzf-preview.FromResources project<CR>
 nnoremap <silent>[fzf]b : <C-u>CocCommand fzf-preview.AllBuffers<CR>
 nnoremap         [fzf]m : <C-u>CocCommand fzf-preview.ProjectGrep<Space>
 
