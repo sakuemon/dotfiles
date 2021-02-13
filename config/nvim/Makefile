@@ -5,9 +5,9 @@ GIT_UPDATE := git reset --hard origin/master
 PACK := pack
 PACK_P0_START := $(PACK)/p0/start
 
-.DEFAULT_GOAL := plugins-update
+.DEFAULT_GOAL := list
 
-.PHONY: init plugins plugins-update
+.PHONY: init plugins plugins-update list
 
 PLUGIN_REPOS := \
 	https://github.com/Shougo/defx.nvim.git \
@@ -65,4 +65,5 @@ plugins: $(foreach repo, $(PLUGIN_REPOS), $(basename $(notdir $(repo))))
 
 plugins-update: $(foreach repo, $(PLUGIN_REPOS), $(basename $(notdir $(repo)))-update)
 
-
+list:
+	@$(foreach repo, $(PLUGIN_REPOS), echo $(repo);)
