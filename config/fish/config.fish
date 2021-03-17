@@ -7,7 +7,9 @@ set PATH $HOME/go/bin $PATH
 set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
 set PATH /usr/local/opt/findutils/libexec/gnubin $PATH
 
-set EDITOR vim
+set -x EDITOR vim
+
+set -x RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/rc
 
 # common
 alias rm='rm -i'
