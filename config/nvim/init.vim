@@ -12,3 +12,4 @@ filetype plugin indent off
 syntax enable
 
 runtime! options.vim
+runtime! vimplug.vim

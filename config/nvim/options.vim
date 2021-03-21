@@ -45,7 +45,6 @@ set wildmenu		" 補完候補表示
 
 " DISPLAY
 set number
-colorscheme gruvbox
 set showmatch		" 対応する括弧
 set noruler		" カーソル行の表示（statuslineで設定）
 set list			" 改行、タブなどの表示
