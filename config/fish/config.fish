@@ -18,6 +18,7 @@ alias rm='rm -i'
 alias vim='nvim'
 alias vi='nvim'
 abbr --add view nvim -R
+abbr --add ls exa
 
 # nvm
 set -x NVM_DIR "$HOME/.nvm"
@@ -26,11 +27,12 @@ set -x NVM_DIR "$HOME/.nvm"
 set -x GO111MODULE on
 
 # fzf
+set -x FZF_PREVIEW_FILE_CMD 'bat --color=always --style=numbers --line-range=:500'
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_DEFAULT_OPTS "--no-height --no-reverse --bind 'right:select-all,left:deselect-all'"
 set -x FZF_TMUX 1
 set -x FZF_ENABLE_OPEN_PREVIEW 1 
-set -x FZF_FIND_FILE_OPTS "--preview 'cat {}'" 
+set -x FZF_FIND_FILE_OPTS "--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 # key binds
 bind \cf accept-autosuggestion
