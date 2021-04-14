@@ -1,0 +1,90 @@
+# Snippets for Go (post completion)
+
+priority -10
+
+snippet "(\S+).!" "not" r
+!`!p snip.rv = match.group(1)`$0
+endsnippet
+
+snippet "(\S+).&" "pointer" r
+&`!p snip.rv = match.group(1)`$0
+endsnippet
+
+snippet "(\S+).\*" "dereference" r
+*`!p snip.rv = match.group(1)`$0
+endsnippet
+
+snippet "(\S+).ap" "append" r
+`!p snip.rv = match.group(1)` = append(`!p snip.rb = match.group(1)`, $1)$0
+endsnippet
+
+snippet "(\S+).as" "errors.As" r
+errors.As(`!p snip.rv = match.group(1)`)
+endsnippet
+
+snippet "(\S+).cl" "close" r
+close(`!p snip.rv = match.group(1)`$1)$0
+endsnippet
+
+snippet "(\S+).empty" "len() == 0" r
+len(`!p snip.rv = match.group(1)`) == 0
+endsnippet
+
+snippet "(\S+).for" "for _, e" r
+for _, e := range `!p snip.rv = match.group(1)` {
+	${0}
+}
+endsnippet
+
+snippet "(\S+).fori" "for i,e" r
+for i, e := range `!p snip.rv = match.group(1)` {
+	${0}
+}
+endsnippet
+
+snippet "(\S+).form" "for k,v" r
+for k, v := range `!p snip.rv = match.group(1)` {
+	${0}
+}
+endsnippet
+
+snippet "(\S+).if" "if" r
+if `!p snip.rv = match.group(1)` {
+	${0}
+}
+endsnippet
+
+snippet "(\S+).ifnot" "if not" r
+if !`!p snip.rv = match.group(1)` {
+	${0}
+}
+endsnippet
+
+snippet "(\S+).is" "errors.Is" r
+errors.Is(`!p snip.rv = match.group(1)`)
+endsnippet
+
+snippet "(\S+).len" "len (postfix)" r
+len(`!p snip.rv = match.group(1)`)
+endsnippet
+
+snippet "(\S+).nil" "== nil" r
+`!p snip.rv = match.group(1)` == nil
+endsnippet
+
+snippet "(\S+).!nil" "== nil" r
+`!p snip.rv = match.group(1)` != nil
+endsnippet
+
+snippet "(\S+).!empty" "len() != 0" r
+len(`!p snip.rv = match.group(1)`) != 0
+endsnippet
+
+
+snippet "(\S+).par" "parenthesis" r
+(`!p snip.rv = match.group(1)`)
+endsnippet
+
+snippet "(\s?)(.+).ret" "return" r
+return `!p snip.rv = match.group(2)`
+endsnippet
