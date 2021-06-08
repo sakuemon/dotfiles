@@ -36,6 +36,7 @@ Plug 'sbdchd/neoformat'
 Plug 'sebdah/vim-delve'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'skywind3000/asyncrun.vim'
+Plug 't9md/vim-quickhl'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 call plug#end()

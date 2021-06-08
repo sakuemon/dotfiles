@@ -12,12 +12,6 @@ nnoremap <silent>[fzf]f : <C-u>CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <silent>[fzf]b : <C-u>CocCommand fzf-preview.AllBuffers<CR>
 nnoremap         [fzf]m : <C-u>CocCommand fzf-preview.ProjectGrep<Space>
 
-" defx
-noremap [Defx] <Nop>
-nmap <Space>z [Defx]
-nnoremap <silent>[Defx]r :<C-u>Defx<CR>
-nnoremap <silent>[Defx]f :<C-u>Defx `expand('%:p:h')`<CR>
-
 " quickfix
 nnoremap <C-q><C-j> : <C-u>cnext<CR>
 nnoremap <C-q><C-k> : <C-u>cprevious<CR>
@@ -55,3 +49,14 @@ call submode#map('winsize', 'n', '', '<', '<C-w><')
 call submode#map('winsize', 'n', '', '_', '<C-w>-')
 call submode#map('winsize', 'n', '', '^', '<C-w>+')
 
+
+" quickhl
+nmap <Space>h <Plug>(quickhl-manual-this)
+xmap <Space>h <Plug>(quickhl-manual-this)
+
+nmap <Space>c <Plug>(quickhl-cword-toggle)
+
+nmap <Space>R <Plug>(quickhl-manual-reset)
+
+nmap <C-j> :  <C-u>QuickhlManualGoToNext<CR>
+nmap <C-k> :  <C-u>QuickhlManualGoToPrev<CR>
