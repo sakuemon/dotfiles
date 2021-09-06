@@ -43,8 +43,6 @@ direnv hook fish | source
 
 starship init fish | source
 
-# jump
-status --is-interactive; and source (jump shell fish | psub)
 
 if test -f ~/.local.fish
 	source ~/.local.fish
