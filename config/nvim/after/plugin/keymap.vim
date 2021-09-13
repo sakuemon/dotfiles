@@ -12,6 +12,18 @@ nnoremap <silent>[fzf]f : <C-u>CocCommand fzf-preview.DirectoryFiles<CR>
 nnoremap <silent>[fzf]b : <C-u>CocCommand fzf-preview.AllBuffers<CR>
 nnoremap         [fzf]m : <C-u>CocCommand fzf-preview.ProjectGrep<Space>
 
+" gina
+noremap [gina] <Nop>
+nmap <Space>g [gina]
+nnoremap <silent>[gina]s :Gina status<CR>
+nnoremap <silent>[gina]b :Gina browse :<CR>
+vnoremap <silent>[gina]b :Gina browse :<CR>
+nnoremap <silent>[gina]B :Gina blame<CR>
+augroup vimrc
+	autocmd FileType gina-status nnoremap <buffer> q :<C-u>close<CR>
+	autocmd FileType diff        nnoremap <buffer> q :<C-u>close<CR>
+augroup END
+
 " quickfix
 nnoremap <C-q><C-j> : <C-u>cnext<CR>
 nnoremap <C-q><C-k> : <C-u>cprevious<CR>

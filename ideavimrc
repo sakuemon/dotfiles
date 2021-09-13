@@ -6,4 +6,41 @@ set visualbell
 set noerrorbells
 set clipboard+=unnamed
 
-map <C-g> :action MoveEditorToOppositeTabGroup<CR>
+
+" plugins
+set commentaly
+
+" Idea specific settings
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+
+" vim setting
+set ignorecase
+set incsearch
+set hlsearch
+set visualbell
+set noerrorbells
+set clipboard+=unnamed
+
+" keymaps
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+nnoremap <Space><Space> :<C-u>action AceAction<CR>
+nnoremap <C-g> :action MoveEditorToOppositeTabGroup<CR>
+
+nnoremap <C-g> :action MoveEditorToOppositeTabGroup<CR>
+nnoremap gr :action FindUsages<CR>
+
+
+"" find
+nnoremap [find] <Nop>
+nmap <Space>f [find]
+nnoremap <silent>[find]f :action GotoFile<CR>
+nnoremap <silent> [find]m :action GotoSymbol<CR>
+
+
+"" github
+nnoremap [git] <Nop>
+nmap <Space>g [git]
+nnoremap <silent>[git]b :action Github.Open.In.Browser<CR>
