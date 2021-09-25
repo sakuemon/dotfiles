@@ -41,9 +41,6 @@ bind -M insert \cf  accept-autosuggestion
 # direnv
 direnv hook fish | source
 
-starship init fish | source
-
-
 if test -f ~/.local.fish
 	source ~/.local.fish
 end
