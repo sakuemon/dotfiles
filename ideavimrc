@@ -40,7 +40,8 @@ nnoremap <silent>[find]f :action GotoFile<CR>
 nnoremap <silent> [find]m :action GotoSymbol<CR>
 
 
-"" github
+"" git
 nnoremap [git] <Nop>
 nmap <Space>g [git]
+nnoremap <silent>[git]B :action Annotate<CR>
 nnoremap <silent>[git]b :action Github.Open.In.Browser<CR>
