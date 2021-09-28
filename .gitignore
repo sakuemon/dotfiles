@@ -7,5 +7,6 @@ vim/backup/
 vim/vundle.git
 config/fish/completions/
 config/fish/conf.d/
+config/fish/functions/
 config/nvim/pack/
 

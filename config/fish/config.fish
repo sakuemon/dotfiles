@@ -11,6 +11,16 @@ set -x EDITOR vim
 
 set -x RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/rc
 
+function fish_prompt
+  test $status -ne 0;
+    and set -l colors 600 900 c00
+    or set -l colors 333 666 aaa
+
+  echo (prompt_pwd)
+
+  echo -n (date +%H:%M:%S) "> "
+
+end
 # common
 alias rm='rm -i'
 
