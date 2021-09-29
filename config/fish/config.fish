@@ -11,16 +11,11 @@ set -x EDITOR vim
 
 set -x RIPGREP_CONFIG_PATH $HOME/.config/ripgrep/rc
 
-function fish_prompt
-  test $status -ne 0;
-    and set -l colors 600 900 c00
-    or set -l colors 333 666 aaa
+function fish_prompt; end
+function fish_right_prompt; end
+function fish_mode_prompt; end
 
-  echo (prompt_pwd)
 
-  echo -n (date +%H:%M:%S) "> "
-
-end
 # common
 alias rm='rm -i'
 
@@ -50,6 +45,13 @@ bind -M insert \cf  accept-autosuggestion
 
 # direnv
 direnv hook fish | source
+
+# starship
+starship init fish | source
+
+# enhancd
+set ENHANCD_FILTER fzf
+
 
 if test -f ~/.local.fish
 	source ~/.local.fish
