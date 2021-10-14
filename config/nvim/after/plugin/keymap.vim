@@ -5,6 +5,9 @@ nmap <Esc><Esc> <Plug>(anzu-clear-search-status):nohl<CR>
 noremap [Run] <Nop>
 nmap <Space>r [Run]
 
+" choosewin
+nmap - <Plug>(choosewin)
+
 " fzf
 noremap [fzf] <Nop>
 nmap <Space>f [fzf]
