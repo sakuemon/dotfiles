@@ -95,7 +95,7 @@ autocmd BufRead,BufNewFile * setlocal foldmethod=marker
 " FILETYPE }}}
 
 " LOCAL
-if filereadable(expand('~/.vimrc.local'))
-	source ~/.vimrc.local
+if filereadable(expand('~/.config_local/nvim/init.vim'))
+	source ~/.config_local/nvim/init.vim
 endif
 

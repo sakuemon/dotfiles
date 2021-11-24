@@ -13,6 +13,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('$HOME/.local/share/nvim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
+Plug 'aklt/plantuml-syntax'
 Plug 'albertomontesg/lightline-asyncrun'
 Plug 'andymass/vim-matchup'
 Plug 'arp242/switchy.vim'
