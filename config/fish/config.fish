@@ -58,7 +58,7 @@ if test -f ~/.config_local/fish/config.fish
 end
 
 if test -d ~/.config_local/fish/functions
-	for f in ~/.cofnig_local/fish/functions/*.fish
+	for f in ~/.config_local/fish/functions/*.fish
 		source $f
 	end
 end
