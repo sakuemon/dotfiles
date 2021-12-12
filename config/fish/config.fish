@@ -52,6 +52,11 @@ starship init fish | source
 # enhancd
 set ENHANCD_FILTER fzf
 
+if test -d ~/.config/fish/my_functions
+	for f in ~/.config/fish/my_functions/*.fish
+		source $f
+	end
+end
 
 if test -f ~/.config_local/fish/config.fish
 	source ~/.config_local/fish/config.fish
