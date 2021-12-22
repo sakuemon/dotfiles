@@ -27,11 +27,28 @@ augroup vimrc
 	autocmd FileType diff        nnoremap <buffer> q :<C-u>close<CR>
 augroup END
 
+" hop
+nnoremap <silent> <Leader><Leader>w :HopWord<CR>
+nnoremap <silent> <leader><Leader>f :HopChar1AC<CR>
+nnoremap <silent> <leader><Leader>F :HopChar1BC<CR>
+
+
 " quickfix
 nnoremap <C-q><C-j> : <C-u>cnext<CR>
 nnoremap <C-q><C-k> : <C-u>cprevious<CR>
 nnoremap <C-q><C-o> : <C-u>copen<CR>
 nnoremap <C-q><C-q> : <C-u>cclose<CR>
+
+" quickhl
+nmap <Space>h <Plug>(quickhl-manual-this)
+xmap <Space>h <Plug>(quickhl-manual-this)
+
+nmap <Space>c <Plug>(quickhl-cword-toggle)
+
+nmap <Space>R <Plug>(quickhl-manual-reset)
+
+nmap <C-j> :  <C-u>QuickhlManualGoToNext<CR>
+nmap <C-k> :  <C-u>QuickhlManualGoToPrev<CR>
 
 " switchy
 command! Switch call switchy#switch('split', 'sbuf')
@@ -64,14 +81,3 @@ call submode#map('winsize', 'n', '', '<', '<C-w><')
 call submode#map('winsize', 'n', '', '_', '<C-w>-')
 call submode#map('winsize', 'n', '', '^', '<C-w>+')
 
-
-" quickhl
-nmap <Space>h <Plug>(quickhl-manual-this)
-xmap <Space>h <Plug>(quickhl-manual-this)
-
-nmap <Space>c <Plug>(quickhl-cword-toggle)
-
-nmap <Space>R <Plug>(quickhl-manual-reset)
-
-nmap <C-j> :  <C-u>QuickhlManualGoToNext<CR>
-nmap <C-k> :  <C-u>QuickhlManualGoToPrev<CR>
