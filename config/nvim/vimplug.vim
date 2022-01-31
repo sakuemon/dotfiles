@@ -11,6 +11,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 
 call plug#begin('$HOME/.local/share/nvim/plugged')
+
+Plug 'AndrewRadev/linediff.vim'
 Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'aklt/plantuml-syntax'
@@ -43,6 +45,8 @@ Plug 't9md/vim-choosewin'
 Plug 't9md/vim-quickhl'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+
+
 call plug#end()
 
 colorscheme gruvbox
