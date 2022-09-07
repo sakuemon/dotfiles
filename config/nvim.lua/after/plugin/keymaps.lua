@@ -1,4 +1,9 @@
 local map = vim.keymap.set
+
+-- global
+map('n', '<ESC><ESC>', ':noh<CR>')
+
+
 -- gina
 map('n', '<Space>g', '<NOP>', {noremap = true})
 map('n', '<Space>gs', ':Gina status<CR>') 

@@ -12,23 +12,33 @@ return require('packer').startup(function(use)
 	use {
 		"hrsh7th/nvim-cmp",
 		requires = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-cmdline',
+			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-nvim-lsp-signature-help',
 		},
 		tag = 'v0.0.1',
 	}
-	use "hrsh7th/cmp-buffer"
 	use 'lambdalisue/gina.vim'
-	use 'liuchengxu/vista.vim'
+	use 'L3MON4D3/LuaSnip'
 	use 'lukas-reineke/indent-blankline.nvim'
-	use 'mhartington/formatter.nvim'
 	use 'machakann/vim-sandwich'
 	use {'nvim-treesitter/nvim-treesitter'}
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
 	use { 'phaazon/hop.nvim', branch = 'v2' }
+	
 	use 'romainl/vim-qf'
+	use "rafamadriz/friendly-snippets"
 	use 'rapan931/lasterisk.nvim'
+	use 'saadparwaiz1/cmp_luasnip'
 	use 'sebdah/vim-delve'
+	use 'simrat39/symbols-outline.nvim'
 	use 't9md/vim-quickhl'
-	use 'tpope/vim-commentary'
+	use 'terrortylor/nvim-comment'
 	use 'tpope/vim-fugitive'
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
