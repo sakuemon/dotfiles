@@ -8,7 +8,6 @@ return require('packer').startup(function(use)
 	use 'benmills/vimux'
 	use 'buoto/gotests-vim'
 	use 'christoomey/vim-tmux-navigator'
-	use 'honza/vim-snippets'
 	use {
 		"hrsh7th/nvim-cmp",
 		requires = {
@@ -17,11 +16,12 @@ return require('packer').startup(function(use)
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-nvim-lsp-signature-help',
+			'L3MON4D3/LuaSnip',
+			'saadparwaiz1/cmp_luasnip',
 		},
 		tag = 'v0.0.1',
 	}
 	use 'lambdalisue/gina.vim'
-	use 'L3MON4D3/LuaSnip'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'machakann/vim-sandwich'
 	use {'nvim-treesitter/nvim-treesitter'}
@@ -34,7 +34,6 @@ return require('packer').startup(function(use)
 	use 'romainl/vim-qf'
 	use "rafamadriz/friendly-snippets"
 	use 'rapan931/lasterisk.nvim'
-	use 'saadparwaiz1/cmp_luasnip'
 	use 'sebdah/vim-delve'
 	use 'simrat39/symbols-outline.nvim'
 	use 't9md/vim-quickhl'
