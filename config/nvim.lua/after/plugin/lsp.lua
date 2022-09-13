@@ -17,8 +17,10 @@ cmp.setup({
 		['<C-j>'] = cmp.mapping.select_next_item(),
 		['<C-k>'] = cmp.mapping.select_prev_item(),
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
-		['<ESC>'] = cmp.mapping.abort(),
-
+		['<ESC>'] = cmp.mapping(function(fallback)
+			cmp.mapping.abort()(fallback)
+			vim.cmd('stopinsert')
+		end, {'i', 's'}),
 		['<TAB>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()

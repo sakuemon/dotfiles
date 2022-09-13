@@ -1,9 +1,9 @@
 require('lualine').setup({
 	options = {
 		icon_enabled = false,
-		theme = 'auto',
-		component_separators = '',
-		section_separators = '',
+		component_separators = '|',
+		section_separators = '|',
+		theme = 'dracula-nvim',
 	},
 	sections = {
 		lualine_x = {

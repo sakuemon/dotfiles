@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
 	use 'lambdalisue/gina.vim'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'machakann/vim-sandwich'
+	use 'Mofiqul/dracula.nvim'
 	use {'nvim-treesitter/nvim-treesitter'}
 	use {
 		'nvim-lualine/lualine.nvim',

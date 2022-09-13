@@ -54,3 +54,5 @@ opt.clipboard = 'unnamedplus'
 
 require('init.bootstrap')
 require('init.packer')
+
+vim.cmd[[colorscheme dracula]]
