@@ -10,3 +10,5 @@ config/fish/conf.d/
 config/fish/functions/
 config/nvim/pack/
 
+Alfred.alfredpreferences/
+
