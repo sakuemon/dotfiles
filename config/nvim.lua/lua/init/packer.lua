@@ -21,15 +21,13 @@ return require('packer').startup(function(use)
 		},
 		tag = 'v0.0.1',
 	}
+	use 'kyazdani42/nvim-web-devicons'
 	use 'lambdalisue/gina.vim'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'machakann/vim-sandwich'
 	use 'Mofiqul/dracula.nvim'
-	use {'nvim-treesitter/nvim-treesitter'}
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-	}
+	use 'nvim-treesitter/nvim-treesitter'
+	use 'nvim-lualine/lualine.nvim'
 	use { 'phaazon/hop.nvim', branch = 'v2' }
 	
 	use 'romainl/vim-qf'

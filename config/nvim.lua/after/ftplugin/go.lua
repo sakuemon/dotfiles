@@ -18,4 +18,3 @@ vim.api.nvim_create_autocmd('BufWritePre',{
 	pattern = {'*.go'},
 	callback = go_org_imports()
 })
--- autocmd BufWritePre *.go lua go_org_imports()
