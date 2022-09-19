@@ -3,7 +3,6 @@ local s = ls.snippet
 local f = ls.function_node
 local t = ls.text_node
 local i = ls.insert_node
-
 local ps = require('luasnip.extras.postfix').postfix
 
 local function surround(trig, pre, post)
@@ -18,6 +17,14 @@ local function prefix(trig, pre)
 	return ps(trig, {
 		f(function(_, parent)
 			return pre .. parent.snippet.env.POSTFIX_MATCH
+		end, {})
+	})
+end
+
+local function postfix(trig, post)
+	return ps(trig, {
+		f(function(_, parent)
+			return  parent.snippet.env.POSTFIX_MATCH .. post
 		end, {})
 	})
 end
@@ -67,6 +74,11 @@ local until_ = ps(".until", {
 	t({'', '}'})
 })
 
+local is_nil     = postfix('.nil', ' == nil')
+local is_not_nil = postfix('.nnil', ' != nil')
+
+
+
 -- other
 local exclamation = prefix('.!', '!')
 local len = surround('.len', 'len(', ')')
@@ -91,6 +103,7 @@ ls.add_snippets('go', {
 
 	if_,
 	until_,
-
+	is_nil,
+	is_not_nil,
 })
 
