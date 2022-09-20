@@ -29,6 +29,20 @@ local function postfix(trig, post)
 	})
 end
 
+local function def_block(trig, def)
+	return s(trig, {
+		t({def .. ' (', ''}),
+		i(0), t(''),
+		t({'', ')'})
+	})
+end
+
+-- def block
+local type_ = def_block('type', 'type')
+local const = def_block('cons', 'const')
+local vars = def_block('var', 'var')
+
+
 -- pointer
 local reference = prefix('.&', '&')
 local dereference = prefix(".*", '*')
@@ -87,6 +101,10 @@ local return_ = prefix('.return', 'return ')
 
 
 ls.add_snippets('go', {
+	type_,
+	const,
+	var,
+
 	exclamation,
 	len,
 	panic,
