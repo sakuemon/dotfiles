@@ -1,6 +1,7 @@
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
+
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
@@ -66,10 +67,17 @@ require('cmp').setup.cmdline('/', {
 })
 
 -- lsp server settings
+local navic = require('nvim-navic')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local function onattach(client, bufnr)
+	navic.attach(client, bufnr)
+end
+
+
 local lspconfig = require('lspconfig')
 
 lspconfig.gopls.setup ({
-	capabilities = capabilities
+	capabilities = capabilities,
+	on_attach = onattach,
 })
 

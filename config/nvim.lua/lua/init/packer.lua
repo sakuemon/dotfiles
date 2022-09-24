@@ -33,6 +33,21 @@ return require('packer').startup(function(use)
 	use 'romainl/vim-qf'
 	use "rafamadriz/friendly-snippets"
 	use 'rapan931/lasterisk.nvim'
+	use {
+		"rcarriga/nvim-dap-ui",
+		requires = {
+			"mfussenegger/nvim-dap",
+			"leoluz/nvim-dap-go",
+			"nvim-treesitter/nvim-treesitter"
+		},
+		config = function ()
+			vim.fn.sign_define('DapBreakpoint', {text='⛔', texthl='', linehl='', numhl=''})
+			vim.fn.sign_define('DapStopped', {text='👉', texthl='', linehl='', numhl=''})
+--			require('dapui').setup()
+--			require('dap-go').setup()
+--			require('dap.ext.vscode').load_launchjs()
+		end
+	}
 	use 'sebdah/vim-delve'
 	use 'simrat39/symbols-outline.nvim'
 	use 't9md/vim-quickhl'
@@ -46,7 +61,12 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	use 'neovim/nvim-lspconfig'
+	use {
+		'neovim/nvim-lspconfig',
+		requires = {
+			"SmiteshP/nvim-navic"
+		}
+	}
 
 	if packer_bootstrap then
 		require('packer').sync()
