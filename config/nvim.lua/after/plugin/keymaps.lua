@@ -20,17 +20,17 @@ map('n', '<Leader><Leader>f', ':HopChar1AC<CR>', opts)
 map('n', '<Leader><Leader>F', ':HopChar1BC<CR>', opts)
 
 -- quickfix
-map('n', '<C-q><C-j>', '<C-u>cnext<CR>', opts)
-map('n', '<C-q><C-k>', '<C-u>cprevious<CR>', opts)
-map('n', '<C-q><C-o>', '<C-u>copen<CR>', opts)
-map('n', '<C-q><C-q>', '<C-u>cclose<CR>', opts)
+map('n', '<C-q><C-j>', ':cnext<CR>', opts)
+map('n', '<C-q><C-k>', ':cprevious<CR>', opts)
+map('n', '<C-q><C-o>', ':copen<CR>', opts)
+map('n', '<C-q><C-q>', ':cclose<CR>', opts)
 
 -- quickhl
 map({'n', 'v'}, '<Space>h', '<Plug>(quickhl-manual-this)', opts)
 map('n',        '<Space>c', '<Plug>(quickhl-cword-toggle)', opts)
 map('n',        '<Space>R', '<Plug>(quickhl-manual-reset)', opts)
-map('n',        '<C-j>', '<C-u>QuickhlManualGoToNext<CR>', opts)
-map('n',        '<C-k>', '<C-u>QuickhlManualGoToPrev<CR>', opts)
+map('n',        '<C-j>', ':QuickhlManualGoToNext<CR>', opts)
+map('n',        '<C-k>', ':QuickhlManualGoToPrev<CR>', opts)
 
 -- tmux
 map('n', '<C-w>h',  ':TmuxNavigateLeft<CR>', {silent=true})
