@@ -50,6 +50,7 @@ return require('packer').startup(function(use)
 	}
 	use 'sebdah/vim-delve'
 	use 'simrat39/symbols-outline.nvim'
+	use 'stevearc/overseer.nvim'
 	use 't9md/vim-quickhl'
 	use 'terrortylor/nvim-comment'
 	use 'tpope/vim-fugitive'
