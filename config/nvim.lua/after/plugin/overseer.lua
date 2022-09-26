@@ -23,3 +23,10 @@ os.register_template({
 		filetype = {'go'},
 	},
 })
+
+local map = vim.keymap.set
+local opts = {
+	noremap = true,
+	silent = true,
+}
+map('n', '<Space>r', ':OverseerRun<CR>', opts)
