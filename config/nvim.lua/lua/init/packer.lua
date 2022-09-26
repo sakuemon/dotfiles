@@ -48,8 +48,10 @@ return require('packer').startup(function(use)
 --			require('dap.ext.vscode').load_launchjs()
 		end
 	}
+	use 'rcarriga/nvim-notify'
 	use 'sebdah/vim-delve'
 	use 'simrat39/symbols-outline.nvim'
+	use 'stevearc/dressing.nvim'
 	use 'stevearc/overseer.nvim'
 	use 't9md/vim-quickhl'
 	use 'terrortylor/nvim-comment'
