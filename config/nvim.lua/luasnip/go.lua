@@ -21,6 +21,7 @@ local function prefix(trig, pre)
 	})
 end
 
+
 local function postfix(trig, post)
 	return ps(trig, {
 		f(function(_, parent)
@@ -38,9 +39,8 @@ local function def_block(trig, def)
 end
 
 -- def block
-local type_ = def_block('type', 'type')
+local type_ = def_block('types', 'type')
 local const = def_block('cons', 'const')
-local vars = def_block('var', 'var')
 
 
 -- pointer
@@ -99,11 +99,15 @@ local len = surround('.len', 'len(', ')')
 local panic = surround('.panic', 'panic(', ')')
 local return_ = prefix('.return', 'return ')
 
+local deprecated = s('Dep', {
+	t({'//', ''}),
+	t('// Deprecated: '), i(0),
+})
+
 
 ls.add_snippets('go', {
 	type_,
 	const,
-	var,
 
 	exclamation,
 	len,
@@ -123,5 +127,7 @@ ls.add_snippets('go', {
 	until_,
 	is_nil,
 	is_not_nil,
+	
+	deprecated,
 })
 
