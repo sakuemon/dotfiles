@@ -22,6 +22,7 @@ require('lualine').setup({
 	},
 	sections = {
 		lualine_c = {
+			'overseer',
 			filename,
 			{
 				navic.get_location,
