@@ -3,6 +3,13 @@ local builtin = require('telescope.builtin')
 
 require('telescope').setup({
 	defaults = {
+		layout_strategy = 'cursor',
+		layout_config = {
+			cursor = {
+				prompt_position = 'top',
+				width = 0.95,
+			},
+		},
 		mappings = {
 			i = {
 				['<C-j>'] = actions.move_selection_next,
