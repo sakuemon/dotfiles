@@ -54,28 +54,28 @@ dap.adapters.go = function(callback, config)
 	end, 100)
 end
 
-dap.configurations.go = {
-	{
-		type = "go",
-		name = "Debug",
-		request = "launch",
-		program = "${file}"
-	},
-	{
-		type = "go",
-		name = "Debug test",
-		request = "launch",
-		mode = "test",
-		program = "${file}"
-	},
-	{
-		type = "go",
-		name = "Debug test (go.mod)",
-		request = "launch",
-		mode = "test",
-		program = "./${relativeFileDirname}"
-	} 
-}
+-- dap.configurations.go = {
+-- 	{
+-- 		type = "go",
+-- 		name = "Debug",
+-- 		request = "launch",
+-- 		program = "${file}"
+-- 	},
+-- 	{
+-- 		type = "go",
+-- 		name = "Debug test",
+-- 		request = "launch",
+-- 		mode = "test",
+-- 		program = "${file}"
+-- 	},
+-- 	{
+-- 		type = "go",
+-- 		name = "Debug test (go.mod)",
+-- 		request = "launch",
+-- 		mode = "test",
+-- 		program = "./${relativeFileDirname}"
+-- 	} 
+-- }
 
 map('n', '<Space>0', dap.continue, opts)
 map('n', '<Space>b', dap.toggle_breakpoint, opts)
