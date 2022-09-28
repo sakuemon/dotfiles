@@ -15,8 +15,8 @@ cmp.setup({
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
-		['<C-j>'] = cmp.mapping.select_next_item(),
-		['<C-k>'] = cmp.mapping.select_prev_item(),
+		['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(),{'i','c'}),
+		['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(),{'i','c'}),
 		['<CR>'] = cmp.mapping.confirm({ select = true }),
 		['<ESC>'] = cmp.mapping(function(fallback)
 			cmp.mapping.abort()(fallback)
@@ -55,12 +55,15 @@ cmp.setup({
 require('luasnip.loaders.from_vscode').lazy_load()
 
 require('cmp').setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'cmdline'}
+		{ name = 'cmdline'},
+		{ namw = 'path'},
 	}
 })
 
-require('cmp').setup.cmdline('/', {
+require('cmp').setup.cmdline({'/','?'}, {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
 		{name = 'buffer'}
 	}
