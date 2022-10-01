@@ -3,9 +3,13 @@ local builtin = require('telescope.builtin')
 
 require('telescope').setup({
 	defaults = {
-		layout_strategy = 'cursor',
+		layout_strategy = 'horizontal',
 		layout_config = {
 			cursor = {
+				prompt_position = 'top',
+				width = 0.95,
+			},
+			horizontal = {
 				prompt_position = 'top',
 				width = 0.95,
 			},
@@ -25,6 +29,7 @@ require('telescope').setup({
 		pickers = {
 			find_files = {
 				find_command = {"rg", "--files", "--hidden", "--glob", "!.git/*"},
+				hidden = true,
 			},
 		},
 		extensions = {
