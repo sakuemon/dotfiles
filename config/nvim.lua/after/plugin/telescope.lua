@@ -51,6 +51,6 @@ map('n', 'gy', builtin.lsp_definitions)
 map('n', '<C-]>', builtin.lsp_definitions)
 map('n', 'gi', builtin.lsp_implementations)
 map('n', 'gr', builtin.lsp_references)
-map('n', 'gt', builtin.lsp_type_definitions)
+map('n', 'gd', builtin.lsp_type_definitions)
 map('n', 'K',  '<cmd>lua vim.lsp.buf.hover()<CR>')
 
