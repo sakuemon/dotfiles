@@ -26,6 +26,13 @@ return require('packer').startup(function(use)
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'machakann/vim-sandwich'
 	use 'Mofiqul/dracula.nvim'
+	use {
+		'nvim-neotest/neotest',
+		requires = {
+			'nvim-lua/plenary.nvim',
+			'nvim-neotest/neotest-go',
+		}
+	}
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'nvim-lualine/lualine.nvim'
 	use { 'phaazon/hop.nvim', branch = 'v2' }
@@ -75,3 +82,4 @@ return require('packer').startup(function(use)
 		require('packer').sync()
 	end
 end)
+
