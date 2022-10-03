@@ -55,16 +55,16 @@ require('lualine').setup({
 	-- 		{navic.get_location, cond = navic.is_available},
 	-- 	}
 	-- },
-	tabline = {
-		lualine_a = {
-			filename,
-		},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {}
-	},
+	-- tabline = {
+	-- 	lualine_a = {
+	-- 		filename,
+	-- 	},
+	-- 	lualine_b = {},
+	-- 	lualine_c = {},
+	-- 	lualine_x = {},
+	-- 	lualine_y = {},
+	-- 	lualine_z = {}
+	-- },
 	extensions = {
 		'quickfix',
 		'nvim-dap-ui',
