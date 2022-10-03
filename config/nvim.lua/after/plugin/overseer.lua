@@ -29,4 +29,6 @@ local opts = {
 	noremap = true,
 	silent = true,
 }
-map('n', '<Space>r', ':OverseerRun<CR>', opts)
+
+map('n', '<Space>rr', ':OverseerRun<CR>', opts)
+map('n', '<Space>rt', ':OverseerToggle right<CR>', opts)
