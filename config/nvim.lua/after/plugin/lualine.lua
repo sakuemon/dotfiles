@@ -23,11 +23,6 @@ require('lualine').setup({
 	sections = {
 		lualine_c = {
 			'overseer',
-			filename,
-			{
-				navic.get_location,
-				cond = navic.is_available
-			},
 		},
 		lualine_x = {
 			'encoding',
@@ -50,11 +45,18 @@ require('lualine').setup({
 		},
 	},
 	-- need neovim 8.0
-	-- winbar = {
-	-- 	lualine_a = {
-	-- 		{navic.get_location, cond = navic.is_available},
-	-- 	}
-	-- },
+	winbar = {
+		lualine_a = {
+			{
+				'filename',
+				path = 1,
+			},
+			{
+				navic.get_location,
+				cond = navic.is_available
+			},
+		}
+	},
 	-- tabline = {
 	-- 	lualine_a = {
 	-- 		filename,
