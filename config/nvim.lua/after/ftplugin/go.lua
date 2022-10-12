@@ -16,10 +16,8 @@ end
 
 vim.api.nvim_create_autocmd('BufWritePre',{
 	pattern = {'*.go'},
-	callback = go_org_imports(1000)
-})
-
-vim.api.nvim_create_autocmd('InsertLeave',{
-	pattern = {'*.go'},
-	callback = vim.lsp.buf.formatting
+	callback = function()
+		go_org_imports(1000)()
+		vim.lsp.buf.format()
+	end
 })
