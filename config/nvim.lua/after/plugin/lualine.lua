@@ -18,6 +18,7 @@ require('lualine').setup({
 			'dapui_stacks',
 			'dapui_watches',
 			'dapui_breakpoints',
+			'qf',
 		}
 	},
 	sections = {
