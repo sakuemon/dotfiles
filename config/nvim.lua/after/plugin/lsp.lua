@@ -71,18 +71,35 @@ require('cmp').setup.cmdline({'/','?'}, {
 
 -- lsp server settings
 local navic = require('nvim-navic')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local function onattach(client, bufnr)
 	navic.attach(client, bufnr)
 end
 
 
 local lspconfig = require('lspconfig')
+local configs = require 'lspconfig/configs'
+
+-- if not configs.golangcilsp then
+--  	configs.golangcilsp = {
+-- 		default_config = {
+-- 			cmd = {'golangci-lint-langserver'},
+-- 			root_dir = lspconfig.util.root_pattern('.git', 'go.mod'),
+-- 			init_options = {
+-- 					command = { "golangci-lint", "run", "--enable-all", "--disable", "lll", "--out-format", "json", "--issues-exit-code=1" };
+-- 			}
+-- 		};
+-- 	}
+-- end
 
 lspconfig.gopls.setup ({
 	capabilities = capabilities,
 	on_attach = onattach,
 })
+
+-- lspconfig.golangci_lint_ls.setup {
+-- 	filetypes = {'go','gomod'}
+-- }
 
 vim.diagnostic.config({
 	virtual_text = false,
