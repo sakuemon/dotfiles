@@ -42,7 +42,9 @@ require('telescope').setup({
 		}
 	},
 })
+
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('overseer')
 
 local map = vim.keymap.set
 map('n', '<Space>f', '<NOP>', {noremap = true})
@@ -50,6 +52,7 @@ map('n', '<Space>ff', builtin.find_files)
 map('n', '<Space>fb', builtin.buffers)
 map('n', '<Space>fm', builtin.live_grep)
 map('n', '<Space>fr', builtin.oldfiles)
+map('n', '<Space>ft', '<cmd>Telescope overseer<cr>')
 
 -- lsp
 map('n', 'gy', builtin.lsp_definitions)

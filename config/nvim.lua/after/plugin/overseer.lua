@@ -1,8 +1,10 @@
-require('overseer').setup()
+require('overseer').setup({
+	dap = true,
+})
 
 local os = require('overseer')
 
-os.register_template({
+local lint = {
 	name = "golangci-lint",
 	builder = function()
 		return {
@@ -22,7 +24,23 @@ os.register_template({
 	condition = {
 		filetype = {'go'},
 	},
-})
+}
+
+local gotest = {
+	name = "gotest",
+	builder = function()
+		return {
+			cmd = {'go'},
+			args = {'test', './...', '-race'},
+		}
+	end,
+	condition = {
+		filetype = {'go'},
+	},
+}
+
+os.register_template(lint)
+os.register_template(gotest)
 
 local map = vim.keymap.set
 local opts = {
@@ -31,4 +49,3 @@ local opts = {
 }
 
 map('n', '<Space>rr', ':OverseerRun<CR>', opts)
-map('n', '<Space>rt', ':OverseerToggle right<CR>', opts)

@@ -1,3 +1,14 @@
+local function tele_ovs()
+	local_file = '~/Projects/github.com/sakuemon/telescope-overseer.nvim'
+	localfile_exists = vim.fn.filereadable(local_file)
+	if localfile_exists then
+		return local_file
+	else
+		return 'sakuemon/telescope-overseer.nvim'
+	end
+end
+
+
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
@@ -77,6 +88,8 @@ return require('packer').startup(function(use)
 			"SmiteshP/nvim-navic"
 		}
 	}
+
+	use {tele_ovs()}
 
 	if packer_bootstrap then
 		require('packer').sync()
