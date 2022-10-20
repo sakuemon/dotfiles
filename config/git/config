@@ -31,3 +31,5 @@
 	required = true
 [ghq]
 	root = ~/go/src
+[init]
+	defaultBranch = main
