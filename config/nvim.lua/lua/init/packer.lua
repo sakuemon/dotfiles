@@ -1,7 +1,7 @@
 local function tele_ovs()
 	local_file = '~/Projects/github.com/sakuemon/telescope-overseer.nvim'
 	localfile_exists = vim.fn.filereadable(local_file)
-	if localfile_exists then
+	if localfile_exists == 1 then
 		return local_file
 	else
 		return 'sakuemon/telescope-overseer.nvim'
