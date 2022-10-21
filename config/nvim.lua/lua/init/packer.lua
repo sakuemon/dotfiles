@@ -68,7 +68,10 @@ return require('packer').startup(function(use)
 	}
 	use 'rcarriga/nvim-notify'
 	use 'sebdah/vim-delve'
-	use 'simrat39/symbols-outline.nvim'
+    use {
+		'stevearc/aerial.nvim',
+		config = function() require('aerial').setup() end
+	}
 	use 'stevearc/dressing.nvim'
 	use 'stevearc/overseer.nvim'
 	use 't9md/vim-quickhl'

@@ -39,12 +39,20 @@ require('telescope').setup({
 				override_file_sorter = true,
 				case_mode = 'smart_case',
 			},
+			aerial = {
+				show_nesting = {
+					['_'] = true,
+					json = true,
+					yaml = true,
+				}
+			},
 		}
 	},
 })
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('overseer')
+require('telescope').load_extension('aerial')
 
 local map = vim.keymap.set
 map('n', '<Space>f', '<NOP>', {noremap = true})
@@ -53,6 +61,7 @@ map('n', '<Space>fb', builtin.buffers)
 map('n', '<Space>fm', builtin.live_grep)
 map('n', '<Space>fr', builtin.oldfiles)
 map('n', '<Space>ft', '<cmd>Telescope overseer<cr>')
+map('n', '<Space>fs', '<cmd>Telescope aerial<cr>')
 
 -- lsp
 map('n', 'gy', builtin.lsp_definitions)
