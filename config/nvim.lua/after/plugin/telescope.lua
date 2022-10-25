@@ -64,8 +64,20 @@ map('n', '<Space>ft', '<cmd>Telescope overseer<cr>')
 map('n', '<Space>fs', '<cmd>Telescope aerial<cr>')
 
 -- lsp
+local jump_type_v = {
+	jump_type = 'vsplit',
+}
+local jump_type_s = {
+	jump_type = 'split',
+}
+local jump_type_t = {
+	jump_type = 'tab',
+}
 map('n', 'gy', builtin.lsp_definitions)
-map('n', '<C-]>', builtin.lsp_definitions)
+map('n', '<C-]><C-]>', builtin.lsp_definitions)
+map('n', '<C-]><C-v>', function() builtin.lsp_definitions(jump_type_v) end)
+map('n', '<C-]><C-x>', function() builtin.lsp_definitions(jump_type_s) end)
+map('n', '<C-]><C-t>', function() builtin.lsp_definitions(jump_type_t) end)
 map('n', 'gi', builtin.lsp_implementations)
 map('n', 'gr', builtin.lsp_references)
 map('n', 'gd', builtin.lsp_type_definitions)
