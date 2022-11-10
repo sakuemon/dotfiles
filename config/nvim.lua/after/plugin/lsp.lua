@@ -74,7 +74,7 @@ local navic = require('nvim-navic')
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local function onattach(client, bufnr)
 	navic.attach(client, bufnr)
-	require('aerial').on_attach(client, bufnr)
+	-- require('aerial').on_attach(client, bufnr)
 end
 
 
