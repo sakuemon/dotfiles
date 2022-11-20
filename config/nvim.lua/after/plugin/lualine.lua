@@ -22,6 +22,16 @@ require('lualine').setup({
 		}
 	},
 	sections = {
+		lualine_b = {
+			{
+				'filename',
+				path = 1,
+			},
+			{
+				navic.get_location,
+				cons = navic.is_available,
+			},
+		},
 		lualine_c = {
 			'overseer',
 		},
@@ -45,29 +55,6 @@ require('lualine').setup({
 			'location'
 		},
 	},
-	-- need neovim 8.0
-	winbar = {
-		lualine_a = {
-			{
-				'filename',
-				path = 1,
-			},
-			{
-				navic.get_location,
-				cond = navic.is_available
-			},
-		}
-	},
-	-- tabline = {
-	-- 	lualine_a = {
-	-- 		filename,
-	-- 	},
-	-- 	lualine_b = {},
-	-- 	lualine_c = {},
-	-- 	lualine_x = {},
-	-- 	lualine_y = {},
-	-- 	lualine_z = {}
-	-- },
 	extensions = {
 		'quickfix',
 		'nvim-dap-ui',
