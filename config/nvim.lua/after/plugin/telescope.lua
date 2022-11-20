@@ -10,7 +10,7 @@ require('telescope').setup({
 				width = 0.95,
 			},
 			horizontal = {
-				prompt_position = 'top',
+				prompt_position = 'bottom',
 				width = 0.95,
 			},
 		},
