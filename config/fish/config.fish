@@ -35,7 +35,8 @@ set -x GO111MODULE on
 set -x FZF_PREVIEW_FILE_CMD 'bat --color=always --style=numbers --line-range=:500'
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --follow --glob "!.git/*"'
 set -x FZF_DEFAULT_OPTS "--no-height --no-reverse --bind 'right:select-all,left:deselect-all'"
-set -x FZF_TMUX 1
+# set -x FZF_TMUX 1
+set -x FZF_TMUX_OPTS "-p 80%"
 set -x FZF_ENABLE_OPEN_PREVIEW 1 
 set -x FZF_FIND_FILE_OPTS "--preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
