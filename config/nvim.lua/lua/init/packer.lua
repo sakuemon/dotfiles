@@ -33,9 +33,9 @@ return require('packer').startup(function(use)
 		tag = 'v0.0.1',
 	}
 	use 'kyazdani42/nvim-web-devicons'
+	use 'kylechui/nvim-surround'
 	use 'lambdalisue/gina.vim'
 	use 'lukas-reineke/indent-blankline.nvim'
-	use 'machakann/vim-sandwich'
 	use 'Mofiqul/dracula.nvim'
 	use {
 		'nvim-neotest/neotest',
