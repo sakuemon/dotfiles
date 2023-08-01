@@ -13,7 +13,6 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use 'AndrewRadev/linediff.vim'
-	use 'airblade/vim-gitgutter'
 	use 'aklt/plantuml-syntax'
 	use 'arthurxavierx/vim-caser'
 	use 'benmills/vimux'
@@ -34,7 +33,7 @@ return require('packer').startup(function(use)
 	}
 	use 'kyazdani42/nvim-web-devicons'
 	use 'kylechui/nvim-surround'
-	use 'lambdalisue/gina.vim'
+	use 'lewis6991/gitsigns.nvim'
 	use 'lukas-reineke/indent-blankline.nvim'
 	use 'Mofiqul/dracula.nvim'
 	use {
@@ -68,6 +67,7 @@ return require('packer').startup(function(use)
 	}
 	use 'rcarriga/nvim-notify'
 	use 'sebdah/vim-delve'
+	use 'sindrets/diffview.nvim'
     use {
 		'stevearc/aerial.nvim',
 		config = function() require('aerial').setup() end

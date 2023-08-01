@@ -8,12 +8,6 @@ local opts = {
 -- global
 map('n', '<ESC><ESC>', ':noh<CR>', opts)
 
--- gina
-map('n', '<Space>g', '<NOP>', opts)
-map('n', '<Space>gs', ':Gina status<CR>', opts) 
-map({'n', 'v'}, '<Space>gb', ':Gina browse :<CR>', opts) 
-map('n', '<Space>gB', ':Gina blame<CR>', opts)
-
 -- hop
 map('n', '<Leader><Leader>w', ':HopWord<CR>', opts)
 map('n', '<Leader><Leader>f', ':HopChar1AC<CR>', opts)
