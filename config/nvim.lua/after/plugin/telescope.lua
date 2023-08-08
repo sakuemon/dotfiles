@@ -3,15 +3,18 @@ local builtin = require('telescope.builtin')
 
 require('telescope').setup({
 	defaults = {
-		layout_strategy = 'horizontal',
+		layout_strategy = 'vertical',
 		layout_config = {
 			cursor = {
 				prompt_position = 'top',
-				width = 0.95,
+				width = 0.80,
 			},
 			horizontal = {
 				prompt_position = 'bottom',
-				width = 0.95,
+				width = 0.80,
+			},
+			vertical = {
+				preview_height = 0.7,
 			},
 		},
 		mappings = {

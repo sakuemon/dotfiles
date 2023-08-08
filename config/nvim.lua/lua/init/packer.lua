@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
 			'nvim-neotest/neotest-go',
 		}
 	}
+	use 'NeogitOrg/neogit'
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'nvim-lualine/lualine.nvim'
 	use { 'phaazon/hop.nvim', branch = 'v2' }
@@ -66,6 +67,10 @@ return require('packer').startup(function(use)
 		end
 	}
 	use 'rcarriga/nvim-notify'
+	use {
+		'ruifm/gitlinker.nvim',
+	    requires = 'nvim-lua/plenary.nvim',
+	}
 	use 'sebdah/vim-delve'
 	use 'sindrets/diffview.nvim'
     use {
@@ -76,7 +81,6 @@ return require('packer').startup(function(use)
 	use 'stevearc/overseer.nvim'
 	use 't9md/vim-quickhl'
 	use 'terrortylor/nvim-comment'
-	use 'tpope/vim-fugitive'
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.0',
 		requires = {
