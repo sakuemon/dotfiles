@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use 'AndrewRadev/linediff.vim'
+	use 'akinsho/toggleterm.nvim'
 	use 'aklt/plantuml-syntax'
 	use 'arthurxavierx/vim-caser'
 	use 'benmills/vimux'
