@@ -40,3 +40,4 @@ map('n', 'sJ', '<C-w>J')
 map('n', 'sK', '<C-w>K')
 map('n', 'sL', '<C-w>L')
 
+map('t', '<Space>t[', '<C-\\><C-n>') -- change terminal-normal mode
