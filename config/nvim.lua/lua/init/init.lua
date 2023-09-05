@@ -56,3 +56,9 @@ require('init.bootstrap')
 require('init.packer')
 
 vim.cmd[[colorscheme dracula]]
+
+vim.api.nvim_create_autocmd({'TermOpen'},{
+	callback = function()
+		vim.wo.number = false
+	end
+})
