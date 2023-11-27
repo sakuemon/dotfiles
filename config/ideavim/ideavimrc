@@ -1,14 +1,10 @@
-set ignorecase
-
-set hlsearch
-
-set visualbell
-set noerrorbells
 set clipboard+=unnamed
 
 
 " plugins
 set commentaly
+set easymotion
+set surround
 
 " Idea specific settings
 set ideajoin
