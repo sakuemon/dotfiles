@@ -1,0 +1,8 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 13.5
+
+[font.normal]
+family = "Hack Nerd Font Mono"
