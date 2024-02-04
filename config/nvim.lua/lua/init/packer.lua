@@ -83,7 +83,7 @@ return require('packer').startup(function(use)
 	use 't9md/vim-quickhl'
 	use 'terrortylor/nvim-comment'
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		'nvim-telescope/telescope.nvim', tag = '0.1.5',
 		requires = {
 			'nvim-lua/plenary.nvim',
 			{'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
