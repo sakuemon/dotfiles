@@ -23,7 +23,7 @@ alias rm='rm -i'
 alias vim='nvim'
 alias vi='nvim'
 abbr --add view nvim -R
-abbr --add ls exa
+abbr --add ls eza
 
 # nvm
 set -x NVM_DIR "$HOME/.nvm"
