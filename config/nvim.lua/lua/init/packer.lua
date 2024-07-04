@@ -48,6 +48,7 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/nvim-treesitter'
 	use 'nvim-lualine/lualine.nvim'
 	use { 'phaazon/hop.nvim', branch = 'v2' }
+	use { "nvim-neotest/nvim-nio" }
 	
 	use 'romainl/vim-qf'
 	use "rafamadriz/friendly-snippets"
