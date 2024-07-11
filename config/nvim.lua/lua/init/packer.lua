@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
 	use 'benmills/vimux'
 	use 'buoto/gotests-vim'
 	use 'christoomey/vim-tmux-navigator'
+	use 'ggandor/leap.nvim'
 	use {
 		"hrsh7th/nvim-cmp",
 		requires = {
