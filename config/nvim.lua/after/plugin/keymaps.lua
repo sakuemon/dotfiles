@@ -8,11 +8,6 @@ local opts = {
 -- global
 map('n', '<ESC><ESC>', ':noh<CR>', opts)
 
--- hop
-map('n', '<Leader><Leader>w', ':HopWord<CR>', opts)
-map('n', '<Leader><Leader>f', ':HopChar1AC<CR>', opts)
-map('n', '<Leader><Leader>F', ':HopChar1BC<CR>', opts)
-
 -- quickfix
 map('n', '<C-q><C-j>', ':cnext<CR>', opts)
 map('n', '<C-q><C-k>', ':cprevious<CR>', opts)
