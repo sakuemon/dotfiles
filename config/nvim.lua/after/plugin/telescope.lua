@@ -14,6 +14,7 @@ require('telescope').setup({
 				width = 0.80,
 			},
 			vertical = {
+				anchor = 'corner',
 				preview_height = 0.7,
 			},
 		},

@@ -106,6 +106,13 @@ vim.diagnostic.config({
 	virtual_text = false,
 })
 
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+	vim.lsp.handlers.hover,
+	{
+		border = "single"
+	}
+)
+
 
 local function on_cursor_hold()
   -- if vim.lsp.buf.server_ready() then
