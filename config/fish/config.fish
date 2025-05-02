@@ -3,9 +3,11 @@ set fish_key_bindings fish_vi_key_bindings
 set -x XDG_CONFIG_HOME $HOME/.config
 
 set LANG ja_JP.UTF-8
-set PATH $HOME/go/bin $PATH
-set PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
-set PATH /usr/local/opt/findutils/libexec/gnubin $PATH
+
+fish_add_path /opt/homebrew/bin
+fish_add_path $HOME/go/bin
+fish_add_path /usr/local/opt/coreutils/libexec/gnubin
+fish_add_path /usr/local/opt/findutils/libexec/gnubin
 
 set -x EDITOR vim
 
