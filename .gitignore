@@ -8,8 +8,10 @@ vim/vundle.git
 config/fish/completions/
 config/fish/conf.d/
 config/fish/functions/
+config/fish/fish_variables
 config/nvim/pack/
 config/nvim.lua/plugin/packer_compiled.lua
+config/tmux/plugins
 
 Alfred.alfredpreferences/
 
