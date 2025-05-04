@@ -52,8 +52,7 @@ opt.signcolumn = 'yes:1'
 
 opt.clipboard = 'unnamedplus'
 
-require('init.bootstrap')
-require('init.packer')
+require('init.lazy')
 
 vim.cmd[[colorscheme dracula]]
 
