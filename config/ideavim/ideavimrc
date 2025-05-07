@@ -41,3 +41,7 @@ nnoremap [git] <Nop>
 nmap <Space>g [git]
 nnoremap <silent>[git]B :action Annotate<CR>
 nnoremap <silent>[git]b :action Github.Open.In.Browser<CR>
+
+"" easymotion
+nmap f <Plug>(easymotion-f2)
+nmap F <Plug>(easymotion-F2)

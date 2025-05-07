@@ -8,7 +8,7 @@ truncation_length = 100
 truncate_to_repo = false
 
 [git_status]
-disabled = true
+disabled = false
 
 [golang]
 disabled = true

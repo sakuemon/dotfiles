@@ -53,6 +53,7 @@ opt.signcolumn = 'yes:1'
 opt.clipboard = 'unnamedplus'
 
 require('init.lazy')
+require('lsp')
 
 vim.cmd[[colorscheme dracula]]
 

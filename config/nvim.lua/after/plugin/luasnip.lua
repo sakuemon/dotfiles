@@ -1,3 +1,3 @@
-require('luasnip.loaders.from_lua').lazy_load({
-	paths = {'~/.config/nvim/luasnip/'}
-})
+-- require('luasnip.loaders.from_lua').lazy_load({
+-- 	paths = {'~/.config/nvim/luasnip/'}
+-- })

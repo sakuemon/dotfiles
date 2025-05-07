@@ -19,19 +19,18 @@ return {
 	{ 'buoto/gotests-vim' },
 	{ 'christoomey/vim-tmux-navigator' },
 	{ 'ggandor/leap.nvim' },
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies =  {
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-cmdline',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-nvim-lsp-signature-help',
-			'L3MON4D3/LuaSnip',
-			'saadparwaiz1/cmp_luasnip',
-		},
-		version = 'v0.0.1',
-	},
+	-- {
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	dependencies =  {
+	-- 		'hrsh7th/cmp-buffer',
+	-- 		'hrsh7th/cmp-cmdline',
+	-- 		'hrsh7th/cmp-path',
+	-- 		'hrsh7th/cmp-nvim-lsp',
+	-- 		'hrsh7th/cmp-nvim-lsp-signature-help',
+	-- 		'saadparwaiz1/cmp_luasnip',
+	-- 	},
+	-- 	version = 'v0.0.1',
+	-- },
 	{ 'kyazdani42/nvim-web-devicons' },
 	{ 'kylechui/nvim-surround' },
 	{ 'lewis6991/gitsigns.nvim' },
@@ -50,7 +49,6 @@ return {
 	{ "nvim-neotest/nvim-nio" },
 	
 	{ 'romainl/vim-qf' },
-	{ "rafamadriz/friendly-snippets" },
 	{ 'rapan931/lasterisk.nvim' },
 	{ "rcarriga/nvim-dap-ui",
 		dependencies = {
@@ -72,6 +70,70 @@ return {
 	    dependencies = 'nvim-lua/plenary.nvim',
 	},
 	{ 'sebdah/vim-delve' },
+	{
+		'Saghen/blink.cmp',
+		version = '1.*',
+		dependencies = {
+			{
+				'L3MON4D3/LuaSnip',
+				version = 'v2.*'
+			},
+			{ "rafamadriz/friendly-snippets" },
+		},
+		fuzzy = {
+			implementation = "prefer_rust_with_warning",
+		},
+		opts = {
+			completion = {
+				menu = {
+					auto_show = true,
+					border = 'single'
+				},
+				documentation = {
+					auto_show = true,
+					auto_show_delay_ms = 500,
+					window = { border = 'single' }
+				},
+			},
+			signature = { window = { border = 'single' } },
+			keymap = {
+				preset = "none",
+				['<C-j>'] = { 'select_next', 'fallback' },
+				['<C-k>'] = { 'select_prev', 'fallback' },
+				['<Tab>'] = {
+					function(cmp)
+						if cmp.snippet_active() then return cmp.accept()
+						else return cmp.select_and_accept() end
+					end,
+					'snippet_forward',
+					'fallback',
+				},
+				['<CR>'] = { 'accept', 'fallback'},
+				['<ESC>'] = { 'hide', 'fallback' },
+			},
+			snippets = { preset = 'luasnip' },
+			sources = {
+				default = { 'lsp', 'path', 'snippets', 'buffer' },
+				providers = {
+					snippets = {
+						score_offset = 10,
+					},
+				},
+			},
+		},
+		config = function(_, opts)
+			require('luasnip').setup({
+				enable_autosnippets = true,
+			})
+			require('luasnip.loaders.from_vscode').lazy_load()
+			require("luasnip.loaders.from_lua").lazy_load()
+			require("luasnip.loaders.from_lua").lazy_load({
+				paths = { '~/.config/nvim/luasnip' },
+			})
+
+			require('blink.cmp').setup(opts)
+		end,
+	},
 	{ 'sindrets/diffview.nvim' },
     {
 		'stevearc/aerial.nvim',
@@ -86,14 +148,14 @@ return {
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-		},
+		}
 	},
-
 	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
-			"SmiteshP/nvim-navic"
-		}
+			"SmiteshP/nvim-navic",
+			'Saghen/blink.cmp',
+		},
 	},
 
 	{tele_ovs()},
