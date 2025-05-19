@@ -19,18 +19,6 @@ return {
 	{ 'buoto/gotests-vim' },
 	{ 'christoomey/vim-tmux-navigator' },
 	{ 'ggandor/leap.nvim' },
-	-- {
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	dependencies =  {
-	-- 		'hrsh7th/cmp-buffer',
-	-- 		'hrsh7th/cmp-cmdline',
-	-- 		'hrsh7th/cmp-path',
-	-- 		'hrsh7th/cmp-nvim-lsp',
-	-- 		'hrsh7th/cmp-nvim-lsp-signature-help',
-	-- 		'saadparwaiz1/cmp_luasnip',
-	-- 	},
-	-- 	version = 'v0.0.1',
-	-- },
 	{ 'kyazdani42/nvim-web-devicons' },
 	{ 'kylechui/nvim-surround' },
 	{ 'lewis6991/gitsigns.nvim' },
@@ -85,9 +73,27 @@ return {
 		},
 		opts = {
 			completion = {
+				ghost_text = {
+					enabled = true,
+					show_with_menu = true,
+				},
+				list = {
+					selection = { preselect = false },
+					cycle = {
+						from_top = true,
+						from_bottom = true,
+					},
+				},
 				menu = {
 					auto_show = true,
-					border = 'single'
+					border = 'single',
+					draw = {
+						columns = {
+							{ "label", "label_description", gap = 1 },
+							{ "kind_icon", "kind" },
+						},
+						treesitter = { 'lsp' },
+					},
 				},
 				documentation = {
 					auto_show = true,
@@ -102,10 +108,20 @@ return {
 				['<C-k>'] = { 'select_prev', 'fallback' },
 				['<Tab>'] = {
 					function(cmp)
-						if cmp.snippet_active() then return cmp.accept()
-						else return cmp.select_and_accept() end
+						if cmp.is_active() then return cmp.select_next()
+						elseif cmp.snippet_active() then return cmp.snippet_forward()
+						end
 					end,
 					'snippet_forward',
+					'fallback',
+				},
+				['<S-Tab>'] = {
+					function(cmp)
+						if cmp.is_active() then return cmp.select_prev()
+						elseif cmp.snippet_active() then return cmp.snippet_backword()
+						end
+					end,
+					'snippet_backward',
 					'fallback',
 				},
 				['<CR>'] = { 'accept', 'fallback'},
