@@ -1,6 +1,7 @@
 [env]
 TERM = "xterm-256color"
 SHELL = "/opt/homebrew/bin/fish"
+LANG = "ja_JP.UTF-8"
 
 [font]
 size = 13.5
