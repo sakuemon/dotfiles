@@ -7,8 +7,9 @@ set LANG ja_JP.UTF-8
 fish_add_path /usr/local/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path $HOME/go/bin
-fish_add_path /usr/local/opt/coreutils/libexec/gnubin
-fish_add_path /usr/local/opt/findutils/libexec/gnubin
+fish_add_path /opt/homebrew/opt/findutils/libexec/gnubin
+fish_add_path /opt/homebrew/opt/coreutils/libexec/gnubin
+fish_add_path /opt/homebrew/opt/gnu-sed/libexec/gnubin
 
 set -x EDITOR vim
 
