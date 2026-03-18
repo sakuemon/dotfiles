@@ -18,7 +18,9 @@ return {
 	{ 'benmills/vimux' },
 	{ 'buoto/gotests-vim' },
 	{ 'christoomey/vim-tmux-navigator' },
-	{ 'ggandor/leap.nvim' },
+    {
+      url = "https://codeberg.org/andyg/leap.nvim",
+    },
 	{ 'kyazdani42/nvim-web-devicons' },
 	{ 'kylechui/nvim-surround' },
 	{ 'lewis6991/gitsigns.nvim' },
